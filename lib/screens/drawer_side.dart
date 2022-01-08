@@ -7,9 +7,7 @@ import 'package:life_style_app/screens/home_screen.dart';
 import 'package:life_style_app/service/phone_service.dart';
 import 'package:life_style_app/shop/shop_home.dart';
 
-
 class DrawerSide extends StatefulWidget {
-
   @override
   _DrawerSideState createState() => _DrawerSideState();
 }
@@ -19,7 +17,7 @@ class _DrawerSideState extends State<DrawerSide> {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return Container(
       width: 300,
       height: double.infinity,
       decoration: BoxDecoration(
@@ -32,8 +30,8 @@ class _DrawerSideState extends State<DrawerSide> {
           ],
           border: Border(
               right: BorderSide(
-                color: Colors.white70,
-              ))),
+            color: Colors.white70,
+          ))),
       child: Stack(
         children: [
           SizedBox(
@@ -46,9 +44,9 @@ class _DrawerSideState extends State<DrawerSide> {
                 child: Container(
                   decoration: BoxDecoration(
                       gradient: LinearGradient(colors: [
-                        Colors.grey.withOpacity(0.0),
-                        Colors.white.withOpacity(0.2),
-                      ])),
+                    Colors.grey.withOpacity(0.0),
+                    Colors.white.withOpacity(0.2),
+                  ])),
                 ),
               ),
             ),
@@ -56,36 +54,37 @@ class _DrawerSideState extends State<DrawerSide> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 10,),
-
+              SizedBox(
+                height: 10,
+              ),
               Padding(
-                padding: const EdgeInsets.only(left: 85.0),
+                padding: const EdgeInsets.only(left: 30.0),
                 child: DrawerHeader(
                   child: Column(
-                    children:  [
+                    children: [
                       CircleAvatar(
                         radius: 40,
                         backgroundColor: Colors.white70,
                         child: CircleAvatar(
-                          backgroundImage: NetworkImage(
-                            auth.user!.photoURL ??
-                                'https://s3.envato.com/files/328957910/vegi_thumb.png'
-                          ),
+                          backgroundImage: NetworkImage(auth.user!.photoURL ??
+                              'https://s3.envato.com/files/328957910/vegi_thumb.png'),
                           radius: 38,
                           backgroundColor: Color(0xffd4d181),
                         ),
                       ),
-                      SizedBox(height: 12,),
-                      Text(auth.user!.displayName ?? 'Abcd' ,
-                        style: TextStyle(
-                            color: Colors.white
-                        ),
+                      SizedBox(
+                        height: 12,
                       ),
-                      SizedBox(height: 5,),
-                      Text(auth.user!.email ?? '12345@gmail.com',
-                        style: TextStyle(
-                            color: Colors.white
-                        ),
+                      Text(
+                        auth.user!.displayName ?? 'Abcd',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        auth.user!.email ?? '12345@gmail.com',
+                        style: TextStyle(color: Colors.white),
                       ),
                     ],
                   ),
@@ -100,67 +99,125 @@ class _DrawerSideState extends State<DrawerSide> {
                       children: [
                         ListTile(
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (_)=>HomeScreen()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) => HomeScreen()));
                           },
                           leading: Icon(
                             CupertinoIcons.home,
                             color: Colors.white,
-                            size:33,
+                            size: 33,
                           ),
-                          title: Text("القائمة الرئيسة",style: TextStyle(color: Colors.white,fontSize: 22),),
+                          title: Text(
+                            "القائمة الرئيسة",
+                            style: TextStyle(color: Colors.white, fontSize: 22),
+                          ),
                         ),
                         ListTile(
                           onTap: () {},
-                          leading: Image.asset('assets/icons/gain.png',height: 35,color: Colors.white,),
-                          title: Text("زيادة الوزن",style: TextStyle(color: Colors.white,fontSize: 22),),
+                          leading: Image.asset(
+                            'assets/icons/gain.png',
+                            height: 35,
+                            color: Colors.white,
+                          ),
+                          title: Text(
+                            "زيادة الوزن",
+                            style: TextStyle(color: Colors.white, fontSize: 22),
+                          ),
                         ),
                         ListTile(
                           onTap: () {},
-                          leading: Image.asset('assets/icons/loss.png',height: 35,color: Colors.white,),
-                          title:Text("خسارة الوزن",style: TextStyle(color: Colors.white,fontSize: 22),),
+                          leading: Image.asset(
+                            'assets/icons/loss.png',
+                            height: 35,
+                            color: Colors.white,
+                          ),
+                          title: Text(
+                            "خسارة الوزن",
+                            style: TextStyle(color: Colors.white, fontSize: 22),
+                          ),
                         ),
                         ListTile(
                           onTap: () {},
-                          leading: Image.asset('assets/icons/diet.png',height: 35,color: Colors.white,),
-                          title: Text("النظام الغذائي",style: TextStyle(color: Colors.white,fontSize: 22),),
+                          leading: Image.asset(
+                            'assets/icons/diet.png',
+                            height: 35,
+                            color: Colors.white,
+                          ),
+                          title: Text(
+                            "النظام الغذائي",
+                            style: TextStyle(color: Colors.white, fontSize: 22),
+                          ),
                         ),
                         ListTile(
                           onTap: () {},
-                          leading: Image.asset('assets/icons/shoes.png',height: 35,color: Colors.white,),
-                          title: Text("تمارين رياضية",style: TextStyle(color: Colors.white,fontSize: 22),),
+                          leading: Image.asset(
+                            'assets/icons/shoes.png',
+                            height: 35,
+                            color: Colors.white,
+                          ),
+                          title: Text(
+                            "تمارين رياضية",
+                            style: TextStyle(color: Colors.white, fontSize: 22),
+                          ),
                         ),
                         ListTile(
                           onTap: () {},
-                          leading: Image.asset('assets/icons/advice.png',height: 35,color: Colors.white,),
-                          title: Text("نصائح صحية عامة",style: TextStyle(color: Colors.white,fontSize: 22),),
+                          leading: Image.asset(
+                            'assets/icons/advice.png',
+                            height: 35,
+                            color: Colors.white,
+                          ),
+                          title: Text(
+                            "نصائح صحية عامة",
+                            style: TextStyle(color: Colors.white, fontSize: 22),
+                          ),
                         ),
                         ListTile(
                           onTap: () {},
-                          leading: Image.asset('assets/icons/settings.png',height: 35,color: Colors.white,),
-                          title:Text("إعدادات حسابك",style: TextStyle(color: Colors.white,fontSize: 22),),
+                          leading: Image.asset(
+                            'assets/icons/settings.png',
+                            height: 35,
+                            color: Colors.white,
+                          ),
+                          title: Text(
+                            "إعدادات حسابك",
+                            style: TextStyle(color: Colors.white, fontSize: 22),
+                          ),
                         ),
                         ListTile(
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (_)=>ShopHome()));
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (_) => ShopHome()));
                           },
-                          leading: Image.asset('assets/icons/shore.png',height: 35,color: Colors.white,),
-                          title: Text("المتجر",style: TextStyle(color: Colors.white,fontSize: 22),),
+                          leading: Image.asset(
+                            'assets/icons/shore.png',
+                            height: 35,
+                            color: Colors.white,
+                          ),
+                          title: Text(
+                            "المتجر",
+                            style: TextStyle(color: Colors.white, fontSize: 22),
+                          ),
                         ),
                         ListTile(
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (_)=>ContactUs()));
-
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (_) => ContactUs()));
                           },
                           leading: Icon(
                             CupertinoIcons.phone,
                             color: Colors.white,
-                            size:33,
+                            size: 33,
                           ),
-                          title:Text("الاتصال بنا",style: TextStyle(color: Colors.white,fontSize: 22),),
+                          title: Text(
+                            "الاتصال بنا",
+                            style: TextStyle(color: Colors.white, fontSize: 22),
+                          ),
                         ),
                       ],
                     ),
-
                   ),
                 ),
               ),
@@ -168,11 +225,27 @@ class _DrawerSideState extends State<DrawerSide> {
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   children: [
-                    Image.asset('assets/icons/fb.png',height: 25,color: Colors.white,),
-                    SizedBox(width: 5,),
-                    Image.asset('assets/icons/instagram.png',height: 25,color: Colors.white,),
-                    SizedBox(width: 5,),
-                    Image.asset('assets/icons/whatsapp.png',height: 25,color: Colors.white,),
+                    Image.asset(
+                      'assets/icons/fb.png',
+                      height: 25,
+                      color: Colors.white,
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Image.asset(
+                      'assets/icons/instagram.png',
+                      height: 25,
+                      color: Colors.white,
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Image.asset(
+                      'assets/icons/whatsapp.png',
+                      height: 25,
+                      color: Colors.white,
+                    ),
                   ],
                 ),
               ),
