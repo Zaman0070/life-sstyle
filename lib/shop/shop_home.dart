@@ -8,6 +8,7 @@ import 'package:life_style_app/shop/product_over_view.dart';
 import 'package:life_style_app/shop/review_star.dart';
 import 'package:life_style_app/shop/single_product.dart';
 import 'package:provider/provider.dart';
+import 'package:woocommerce_api/woocommerce_api.dart';
 
 
 class ShopHome extends StatefulWidget {
@@ -18,50 +19,22 @@ class ShopHome extends StatefulWidget {
 
 class _ShopHomeState extends State<ShopHome> {
 
+  Future _getProducts() async {
+    // Initialize the API
+    WooCommerceAPI wooCommerceAPI = WooCommerceAPI(
+        url: "https://nutriana.surnaturel.ma/",
+        consumerKey: "ck_73b8b2030da9878cdc1b9cdab513fce415418696",
+        consumerSecret: "cs_974a8179e3d0009937fc59c3793ae9a85be50a0c");
 
-  Widget _buildHerbsProduct(context) {
-    ProductProvider productProvider = Provider.of<ProductProvider>(context);
-    return SingleChildScrollView(
-      scrollDirection: Axis.vertical,
-      child: Column(
-        children: productProvider.getHerbsProductDataList.map((herbsProductData) {
-          return  SingleProduct(
-            onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (_)=>ProductOverview(
-                productPrice: herbsProductData.productPrice,
-                productName:herbsProductData.productName,
-                productUrl: herbsProductData.productUrl,
-                productId: herbsProductData.productId,
-              )));
-            },
-            productUrl:herbsProductData.productUrl,
-            productName:herbsProductData.productName,
-            productPrice: herbsProductData.productPrice,
-            productId: herbsProductData.productId,
-            productUnit: herbsProductData,
-          );
-        }).toList(),
-      ),
-    );
+    // Get data using the "products" endpoint
+    var products = await wooCommerceAPI.getAsync("products");
+
+    return products;
   }
 
-       @override
-       void initState() {
-         ProductProvider productProvider =  Provider.of(context,listen: false );
-         CartProvider cartProvider = Provider.of(context,listen: false);
-         productProvider.fetchHerbsProductData();
-         // TODO: implement initState
-         super.initState();
-       }
-
-       ProductProvider? product ;
-  CartProvider cart=CartProvider();
 
   @override
   Widget build(BuildContext context) {
-
-    
-    product =Provider.of(context);
     return Scaffold(
       backgroundColor: Color(0xffFBFAF8),
       bottomNavigationBar: Container(
@@ -98,8 +71,6 @@ class _ShopHomeState extends State<ShopHome> {
             CircleAvatar(
               backgroundColor:  Color(0xffFDB640),
                child: Image.asset('assets/icons/shopping-cart.png',height: 20,)),
-
-
 
           ],
         ),
@@ -152,7 +123,62 @@ class _ShopHomeState extends State<ShopHome> {
 
           ),
           SizedBox(height: 5,),
-          _buildHerbsProduct(context),
+          Directionality(
+            textDirection: TextDirection.rtl,
+            child: Container(
+              height: 435,
+              color: Colors.green,
+              child:   FutureBuilder(
+                future: _getProducts(),
+                builder: (BuildContext context, AsyncSnapshot snapshot) {
+                  if (snapshot.hasData) {
+                    // Create a list of products
+                    return ListView.builder(
+
+                      itemCount: snapshot.data.length,
+                      itemBuilder: (BuildContext context, int index) {
+
+                        return GestureDetector(
+                          onTap: ()
+
+
+                          {
+                            Navigator.push(context, MaterialPageRoute(builder: (_)=>ProductOverview(
+                              productUrl: snapshot.data[index]["images"][0]["src"].toString(),
+                              productName:snapshot.data[index]["name"].toString(),
+                              productPrice: snapshot.data[index]["price"].toString(),
+                            )));
+                          },
+                          child: ListTile(
+                            leading: Image.network(snapshot.data[index]["images"][0]["src"].toString(),height: 50,),
+                            title: Flexible(
+                              child: Text(snapshot.data[index]["name"].toString(),style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                overflow: TextOverflow.ellipsis
+                              ),),
+                            ),
+                            subtitle:
+                            Text("Buy now for \$ " + snapshot.data[index]["price"].toString()),
+                            trailing: CircleAvatar(
+                                backgroundColor:  Color(0xffFDB640),
+                                child: Image.asset('assets/icons/shopping-cart.png',height: 20,)) ,
+                          ),
+                        );
+                      },
+                    );
+                  }
+
+                  // Show a circular progress indicator while loading products
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                },
+              ),
+            ),
+          ),
+
+
         ],
       ) ,
     );
