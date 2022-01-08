@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">lifestyledemo</string>
+    <string name="facebook_app_id">246958480912720</string>
+    <string name="fb_login_protocol_scheme">fb246958480912720</string>
+    <string name="facebook_client_token">abc272cabd99d482d133c35d57236e13</string>
+
+
+
+</resources>
+
+
