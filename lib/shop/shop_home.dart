@@ -20,7 +20,7 @@ class ShopHome extends StatefulWidget {
 class _ShopHomeState extends State<ShopHome> {
 
   GlobalKey<CartIconKey> gkCart = GlobalKey<CartIconKey>();
-  late Function(GlobalKey) runAddToCardAnimation;
+   late Function(GlobalKey) runAddToCardAnimation;
   var _cartQuantityItems = 0;
 
 
@@ -52,6 +52,7 @@ class _ShopHomeState extends State<ShopHome> {
       opacity: 0.85,
       initiaJump: false,
       receiveCreateAddToCardAnimationMethod: (addToCardAnimationMethod) {
+
         // You can run the animation by addToCardAnimationMethod, just pass trough the the global key of  the image as parameter
         this.runAddToCardAnimation = addToCardAnimationMethod;
       },
@@ -213,8 +214,8 @@ class _ShopHomeState extends State<ShopHome> {
       ),
     );
   }
-  void listClick(GlobalKey ) async {
-    await runAddToCardAnimation;
+  void listClick(GlobalKey gkImageContainer) async {
+    await runAddToCardAnimation(gkImageContainer);
     await gkCart.currentState!.runCartAnimation((++_cartQuantityItems).toString());
   }
 }
