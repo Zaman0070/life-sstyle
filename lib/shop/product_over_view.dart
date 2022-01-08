@@ -169,7 +169,7 @@ class _ProductOverviewState extends State<ProductOverview> {
                               ),
                             ],
                           ),
-                          Text('\$${widget.productPrice}',
+                          Text('\AED ${widget.productPrice}',
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: 20,
@@ -180,7 +180,7 @@ class _ProductOverviewState extends State<ProductOverview> {
                     ),
                     SizedBox(height: 10,),
                     Padding(
-                      padding: const EdgeInsets.only(left: 20.0,right: 20),
+                      padding: const EdgeInsets.only(left: 30.0,right: 30),
                       child: Directionality(
                         textDirection: TextDirection.rtl,
                         child: Text('مرحبا بكم على متجر نوتريانا الذي نقترح فيه عليكم مكملات غذائية طبيعية تساعد في زيادة قوة الجسم ، زيادة الكتلة العضلية و محاربة أعراض القولون العصبي'
