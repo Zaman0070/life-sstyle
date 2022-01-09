@@ -25,7 +25,7 @@ class _DrawerSideState extends State<DrawerSide> {
           boxShadow: const [
             BoxShadow(
               color: Colors.black54,
-              blurRadius: 2.0,
+              blurRadius: 1,
             )
           ],
           border: Border(

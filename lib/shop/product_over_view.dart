@@ -12,9 +12,10 @@ class ProductOverview extends StatefulWidget {
   final String? productName;
   final String? productUrl;
   final String? productPrice;
+  final int? count;
 
 
-  ProductOverview({this.productName,this.productUrl,this.productPrice});
+  ProductOverview({this.productName,this.productUrl,this.productPrice,this.count});
 
 
 
@@ -59,6 +60,7 @@ class _ProductOverviewState extends State<ProductOverview> {
             CircleAvatar(
                 backgroundColor:  Color(0xffFDB640),
                 child: Image.asset('assets/icons/shopping-cart.png',height: 20,)),
+            Text('${widget.count}+',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black,fontSize: 16),),
 
 
 
