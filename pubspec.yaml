@@ -54,6 +54,7 @@ dependencies:
   woocommerce_api: ^0.1.0
   add_to_cart_animation: ^1.0.1
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
