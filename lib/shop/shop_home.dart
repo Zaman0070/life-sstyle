@@ -121,7 +121,7 @@ class _ShopHomeState extends State<ShopHome> {
                     padding: const EdgeInsets.only(left: 30.0,right: 30),
                     child: Text('مرحبا بكم على متجر نوتريانا الذي نقترح فيه عليكم مكملات غذائية طبيعية تساعد في زيادة قوة الجسم ، زيادة الكتلة العضلية و محاربة أعراض القولون العصبي',
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500),
+                    style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),
                     ),
                   ),
                 ),
