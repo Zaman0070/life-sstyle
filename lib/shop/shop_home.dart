@@ -114,16 +114,14 @@ class _ShopHomeState extends State<ShopHome> {
                     child: Center(child: Text('المتجر',
                     style: TextStyle(fontWeight: FontWeight.w500,fontSize: 34,letterSpacing: 3),
                     ))),
-                Padding(
-                  padding: const EdgeInsets.only(left: 45.0,right: 45),
-                  child: Container(
-                    height: MediaQuery.of(context).size.height/7.1,
-                    width: 300,
-                    child: Directionality(
-                      textDirection: TextDirection.rtl,
-                      child: Text('مرحبا بكم على متجر نوتريانا الذي نقترح فيه عليكم مكملات غذائية طبيعية تساعد في زيادة قوة الجسم ، زيادة الكتلة العضلية و محاربة أعراض القولون العصبي',
-                      style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500),
-                      ),
+                SizedBox(height: 8,),
+                Directionality(
+                  textDirection: TextDirection.rtl,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 30.0,right: 30),
+                    child: Text('مرحبا بكم على متجر نوتريانا الذي نقترح فيه عليكم مكملات غذائية طبيعية تساعد في زيادة قوة الجسم ، زيادة الكتلة العضلية و محاربة أعراض القولون العصبي',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500),
                     ),
                   ),
                 ),
@@ -131,7 +129,7 @@ class _ShopHomeState extends State<ShopHome> {
             ),
 
           ),
-          SizedBox(height: 5,),
+          SizedBox(height: 30,),
           Directionality(
             textDirection: TextDirection.rtl,
             child: Container(
@@ -184,7 +182,6 @@ class _ShopHomeState extends State<ShopHome> {
                       },
                     );
                   }
-
                   // Show a circular progress indicator while loading products
                   return const Center(
                     child: CircularProgressIndicator(color:  Color(0xffFDB640),),
@@ -193,8 +190,6 @@ class _ShopHomeState extends State<ShopHome> {
               ),
             ),
           ),
-
-
         ],
       ) ,
     );

@@ -7,7 +7,7 @@
     </queries>
 
    <application
-        android:label="life_style_app"
+        android:label="Nutriana"
         android:icon="@mipmap/ic_launcher">
 
 
