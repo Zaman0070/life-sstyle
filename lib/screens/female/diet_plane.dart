@@ -10,7 +10,6 @@ import 'package:life_style_app/screens/female/g_main_menu.dart';
 import 'package:life_style_app/shop/review_star.dart';
 import 'package:life_style_app/shop/shop_home.dart';
 class DietPlane extends StatefulWidget {
-  static const String id = 'diet-splan';
   const DietPlane({Key? key}) : super(key: key);
 
   @override
@@ -68,7 +67,7 @@ class _DietPlaneState extends State<DietPlane> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       IconButton(onPressed: (){
-                        Navigator.pushReplacementNamed(context, MainMenu.id);
+                        Navigator.pop(context);
                       },
                       icon: Icon(Icons.arrow_back_ios_new,color: Colors.white,)),
                       Builder(
@@ -91,7 +90,8 @@ class _DietPlaneState extends State<DietPlane> {
                   SizedBox(height: 150,),
                   InkWell(
                   onTap: (){
-                    Navigator.pushReplacementNamed(context, FemaleDietSystem.id);
+                    //Navigator.pushReplacementNamed(context, FemaleDietSystem.id);
+                    Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleDietSystem()));
                   },
                     child: Container(
                       height: 120,
@@ -117,17 +117,8 @@ class _DietPlaneState extends State<DietPlane> {
 
                           ),
                           SizedBox(width: 12,),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(height: 12,),
-                              Text('DIET SYSTEM',
-                                style: TextStyle(color: Colors.red.shade800,fontSize: 18,fontWeight: FontWeight.bold),
-                              ),
-                              Text('نظام غذائي',
-                                style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
-                              ),
-                            ],
+                          Text('نظام غذائي',
+                            style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -136,12 +127,16 @@ class _DietPlaneState extends State<DietPlane> {
                   SizedBox(height: 35,),
                   InkWell(
                     onTap: (){
-                      Navigator.pushReplacementNamed(context, FemaleSport.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleSport()));
+
+                      //Navigator.pushReplacementNamed(context, FemaleSport.id);
                     },
                     child: Container(
                       height: 120,
                       width: 270,
+
                       decoration: BoxDecoration(
+
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(65),
                           boxShadow: const [
@@ -154,25 +149,16 @@ class _DietPlaneState extends State<DietPlane> {
                       ),
                       child: Row(
                         children: [
-                          SizedBox(width: 22,),
+                          SizedBox(width: 15,),
                           Container(
-                            height: 103,
+                            height: 95,
                             width: 110,
                             child: Image.asset('assets/sp_ex.jpg'),
 
                           ),
                           SizedBox(width: 12,),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(height: 12,),
-                              Text('SPORT\nEXERCISES',
-                                style: TextStyle(color: Colors.red.shade800,fontSize: 18,fontWeight: FontWeight.bold),
-                              ),
-                              Text('تمارين رياضية',
-                                style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
-                              ),
-                            ],
+                          Text('تمارين رياضية',
+                            style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -181,7 +167,9 @@ class _DietPlaneState extends State<DietPlane> {
                   SizedBox(height: 35,),
                   InkWell(
                     onTap: (){
-                      Navigator.pushReplacementNamed(context, FemaleGeneralAdvice.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleGeneralAdvice()));
+
+                      //Navigator.pushReplacementNamed(context, FemaleGeneralAdvice.id);
                     },
                     child: Container(
                       height: 120,
@@ -207,17 +195,8 @@ class _DietPlaneState extends State<DietPlane> {
 
                           ),
                           SizedBox(width: 12,),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(height: 12,),
-                              Text('GENERAL\nADVICE',
-                                style: TextStyle(color: Colors.red.shade800,fontSize: 18,fontWeight: FontWeight.bold),
-                              ),
-                              Text('نصائح عامة',
-                                style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
-                              ),
-                            ],
+                          Text('نصائح عامة',
+                            style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),

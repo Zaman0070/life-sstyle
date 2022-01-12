@@ -52,7 +52,7 @@ class _LossSportDay6State extends State<LossSportDay6> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>LossWeightSportCalender()));
+                      Navigator.pop(context);
                     },
                         icon: Icon(Icons.arrow_back_ios_new,color: Colors.black,)),
 

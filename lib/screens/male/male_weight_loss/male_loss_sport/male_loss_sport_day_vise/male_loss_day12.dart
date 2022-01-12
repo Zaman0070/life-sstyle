@@ -50,7 +50,7 @@ class _MaleLossDay12State extends State<MaleLossDay12> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossSportCalender()));
+                      Navigator.pop(context);
                     },
                         icon: Icon(Icons.arrow_back_ios_new,color: Colors.black,)),
 

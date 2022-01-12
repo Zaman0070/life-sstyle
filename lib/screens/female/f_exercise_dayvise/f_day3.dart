@@ -52,7 +52,7 @@ class _FExDay3State extends State<FExDay3> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(onPressed: (){
-                      Navigator.pushReplacementNamed(context,FemaleSport.id);
+                      Navigator.pop(context);
                     },
                         icon: Icon(Icons.arrow_back_ios_new,color: Colors.black,)),
 

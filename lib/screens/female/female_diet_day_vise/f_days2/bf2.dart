@@ -1,8 +1,10 @@
+import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:life_style_app/screens/female/female_diet_day_vise/f_days2/f_food_main2.dart';
 import 'package:life_style_app/shop/review_star.dart';
 import 'package:life_style_app/shop/shop_home.dart';
+import 'package:share/share.dart';
 
 import '../../../drawer_side.dart';
 
@@ -58,7 +60,7 @@ class _BreakFastday2State extends State<BreakFastday2> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(onPressed: (){
-                      Navigator.pushReplacementNamed(context,FemaleFoodMain2.id);
+                      Navigator.pop(context);
                     },
                         icon: Icon(Icons.arrow_back_ios_new,color: Colors.white,)),
 
@@ -116,15 +118,27 @@ class _BreakFastday2State extends State<BreakFastday2> {
                         Row(
                           children: [
                             Row(
-                              children: const [
-                                Icon(Icons.favorite_outline,size: 20,),
+                              children:  [
+                                Container(
+                                  height:25,
+                                  width: 25,
+                                  child: FavoriteButton(
+                                    iconSize: 33,
+                                    isFavorite: true,
+                                    // iconDisabledColor: Colors.white,
+                                    valueChanged: (_isFavorite) {
+                                      print('Is Favorite : $_isFavorite');
+                                    },
+                                  ),
+                                ),
                                 Text('الإعجابات'),
                                 SizedBox(width: 12,),
-                                Icon(Icons.share,size: 20,),
+                                InkWell(
+                                    onTap: (){
+                                      Share.share('https://github.com/Zaman0070/life-sstyle');
+                                    },
+                                    child: Icon(Icons.share,size: 20,)),
                                 Text('مشاركة'),
-                                SizedBox(width: 12,),
-                                Icon(CupertinoIcons.chat_bubble,size: 20,),
-                                Text('تعليق'),
                               ],
                             ),
                           ],

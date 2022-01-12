@@ -53,6 +53,8 @@ dependencies:
   easy_localization: ^3.0.0
   woocommerce_api: ^0.1.0
   add_to_cart_animation: ^1.0.1
+  favorite_button: ^0.0.4
+  share: ^2.0.4
 
 
 dev_dependencies:

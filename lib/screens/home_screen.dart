@@ -3,7 +3,6 @@ import 'package:life_style_app/screens/female/female_screen.dart';
 import 'package:life_style_app/screens/male/male_home.dart';
 
 class HomeScreen extends StatelessWidget {
-  static const String id = 'home-screen';
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
@@ -14,50 +13,30 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(height: 30,),
-              Text('WELCOME TO OUR APP',
-              style: TextStyle(color: Colors.red.shade800,fontSize: 20,fontWeight: FontWeight.w500),
-              ),
               SizedBox(height: 8,),
               Container(
                 height: 60,
                 width: MediaQuery.of(context).size.width/1.4,
                 color: Color(0xfffbbe28),
-                child: Center(child: Text('مرحبا بكم في تطبيقنا',
+                child: Center(child: Text('مرحبا بك على تطبيقنا',
                 style: TextStyle(
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.bold,
                   fontSize: 24,
                 ),
                 )),
 
               ),
               SizedBox(height: 20,),
-              Text('ستساعدنا البيانات التالية في اختيار أفضل\n نظام غذائي وممارسة الرياضة بالنسبة لك',
+              Text('ستساعدنا هاته البيانات على اختيار \nالنظام الغذائي و الرياضي المناسب لك',textAlign: TextAlign.center,
                 style: TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeight.w500),
               ),
-              SizedBox(height: 10,),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Center(
-                  child: Text('THE FOLLOWING DATA WILL HELP US CHOOSE THE BEST DIET AND EXERCISE FOR YOU ',
-                    textAlign: TextAlign.center,
-
-                    style: TextStyle(color: Colors.red.shade800,fontSize: 15,fontWeight: FontWeight.w500,letterSpacing: 0.8),
-                  ),
-                ),
-              ),
-              Center(
-                child: Text('ARE YOU ',
-                  textAlign: TextAlign.center,
-
-                  style: TextStyle(color: Colors.red.shade800,fontSize: 20,fontWeight: FontWeight.w500,letterSpacing: 0.8),
-                ),
-              ),
+              SizedBox(height: 50,),
               Text('هل أنت',
                 textAlign: TextAlign.center,
 
-                style: TextStyle(color: Colors.black,fontSize: 22,fontWeight: FontWeight.w500,letterSpacing: 0.8),
+                style: TextStyle(color: Colors.black,fontSize: 26,fontWeight: FontWeight.bold,letterSpacing: 0.8),
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: 20,),
               Container(
                 height: 300,
                 width: 300,
@@ -66,18 +45,13 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     Column(
                       children: [
-                        Text('MALE',
+                        SizedBox(height: 8,),
+                        Text('شاب',
                           textAlign: TextAlign.center,
 
-                          style: TextStyle(color: Colors.red.shade800,fontSize: 20,fontWeight: FontWeight.w500,letterSpacing: 0.8),
+                          style: TextStyle(color: Colors.black,fontSize: 24,fontWeight: FontWeight.bold,letterSpacing: 0.8),
                         ),
-                        SizedBox(height: 8,),
-                        Text('الذكر',
-                          textAlign: TextAlign.center,
-
-                          style: TextStyle(color: Colors.black,fontSize: 22,fontWeight: FontWeight.w500,letterSpacing: 0.8),
-                        ),
-                        SizedBox(height: 8,),
+                        SizedBox(height: 20,),
 
                         InkWell(
                           onTap: (){
@@ -109,18 +83,13 @@ class HomeScreen extends StatelessWidget {
                     ),
                     Column(
                       children: [
-                        Text('FEMALE',
+                        SizedBox(height: 8,),
+                        Text('فتاة',
                           textAlign: TextAlign.center,
 
-                          style: TextStyle(color: Colors.red.shade800,fontSize: 20,fontWeight: FontWeight.w500,letterSpacing: 0.8),
+                          style: TextStyle(color: Colors.black,fontSize: 24,fontWeight: FontWeight.bold,letterSpacing: 0.8),
                         ),
-                        SizedBox(height: 8,),
-                        Text('أنثى',
-                          textAlign: TextAlign.center,
-
-                          style: TextStyle(color: Colors.black,fontSize: 22,fontWeight: FontWeight.w500,letterSpacing: 0.8),
-                        ),
-                        SizedBox(height: 8,),
+                        SizedBox(height: 20,),
 
                         InkWell(
                           onTap: (){

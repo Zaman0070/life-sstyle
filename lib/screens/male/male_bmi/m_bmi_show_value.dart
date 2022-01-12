@@ -28,7 +28,7 @@ class _MaleBmiShowValueState extends State<MaleBmiShowValue> {
         child: Column(
           children: [
             Container(
-              height: 70,
+              height: 60,
               width: MediaQuery.of(context).size.width,
               child: Padding(
                 padding: const EdgeInsets.all(12.0),
@@ -37,8 +37,8 @@ class _MaleBmiShowValueState extends State<MaleBmiShowValue> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleBmiHome()));
-                      },
+                      Navigator.pop(context);
+                    },
                         icon: Icon(Icons.arrow_back_ios_new,color: Colors.black,)),
                     Builder(
                       builder: (context){
@@ -79,7 +79,7 @@ class _MaleBmiShowValueState extends State<MaleBmiShowValue> {
                             child: const Padding(
                               padding: const EdgeInsets.all(10.0),
                               child: Text(
-                                'حاسبة مؤشر كتلة الجسم',
+                                'تحليل الوزن',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontSize: 25,
@@ -89,18 +89,18 @@ class _MaleBmiShowValueState extends State<MaleBmiShowValue> {
                             ),
                           ),
                           CustomText(
-                            hintText: 'عمر',
+                            hintText: 'سنة',
                             icon: Icons.watch_later_outlined,
                             textUSer: widget.age,
                           ),
                           CustomText(
-                            hintText: 'ارتفاع',
+                            hintText: 'سم',
                             icon: Icons.thermostat,
                             textUSer: widget.height,
                           ),
                           CustomText(
                             icon: Icons.monitor_weight_outlined,
-                            hintText: 'وزن',
+                            hintText: 'كيلوغرام',
                             textUSer: widget.weight,
                           ),
                           Padding(
@@ -119,7 +119,7 @@ class _MaleBmiShowValueState extends State<MaleBmiShowValue> {
                                   size: 20,
                                 ),
                                 label: const Text(
-                                  'احسب بمي',
+                                  'تحليل وزني',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(fontSize: 25, color: Colors.black),
                                 ),

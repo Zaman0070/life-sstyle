@@ -55,7 +55,7 @@ class _DrawerSideState extends State<DrawerSide> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: 10,
+                height: 5,
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 30.0),
@@ -73,14 +73,14 @@ class _DrawerSideState extends State<DrawerSide> {
                         ),
                       ),
                       SizedBox(
-                        height: 12,
+                        height: 8,
                       ),
                       Text(
                         auth.user!.displayName ?? 'Abcd',
                         style: TextStyle(color: Colors.white),
                       ),
                       SizedBox(
-                        height: 5,
+                        height: 2,
                       ),
                       Text(
                         auth.user!.email ?? '12345@gmail.com',

@@ -22,45 +22,28 @@ class _MaleHomeScreenState extends State<MaleHomeScreen> {
       body: SafeArea(
         child:Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SizedBox(height: 30,),
-              Text('WELCOME TO OUR APP',
-                style: TextStyle(color: Colors.red.shade800,fontSize: 20,fontWeight: FontWeight.w500),
-              ),
               SizedBox(height: 8,),
               Container(
                 height: 60,
                 width: MediaQuery.of(context).size.width/1.4,
                 color: Color(0xfffbbe28),
-                child: Center(child: Text('مرحبا بكم في تطبيقنا',
+                child: Center(child: Text('مرحبا بك على تطبيقنا',
                   style: TextStyle(
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.bold,
                     fontSize: 24,
                   ),
                 )),
 
               ),
               SizedBox(height: 25,),
-              Text('ستساعدنا البيانات التالية في اختيار أفضل\n نظام غذائي وممارسة الرياضة بالنسبة لك',
+              Text('ستساعدنا هاته البيانات على اختيار \nالنظام الغذائي و الرياضي المناسب لك',
+                textAlign: TextAlign.center,
                 style: TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeight.w500),
               ),
-              SizedBox(height: 20,),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Center(
-                  child: Text('THE FOLLOWING DATA WILL HELP US CHOOSE THE BEST DIET AND EXERCISE FOR YOU ',
-                    textAlign: TextAlign.center,
-
-                    style: TextStyle(color: Colors.red.shade800,fontSize: 15,fontWeight: FontWeight.w500,letterSpacing: 0.8),
-                  ),
-                ),
-              ),
-              SizedBox(height: 20,),
-              Text('MAIN MENU',
-                style: TextStyle(color: Colors.red.shade800,fontSize: 22,fontWeight: FontWeight.w500),
-              ),
-              SizedBox(height: 12,),
+              SizedBox(height: 82,),
               InkWell(
                 onTap: (){
                 Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleMainMenu()));
@@ -70,7 +53,7 @@ class _MaleHomeScreenState extends State<MaleHomeScreen> {
                   width: 200,
                   color: Color(0xfffbbe28),
                   child: Center(
-                    child: Text('القائمة الرئيسية <',
+                    child: Text(' القائمة البئيسية   <',
                       style: TextStyle(
                         fontSize: 19,
                         fontWeight: FontWeight.w500,
@@ -80,11 +63,7 @@ class _MaleHomeScreenState extends State<MaleHomeScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 20,),
-              Text('BMI Calculator',
-                style: TextStyle(color: Colors.red.shade800,fontSize: 22,fontWeight: FontWeight.w500),
-              ),
-              SizedBox(height: 12,),
+              SizedBox(height: 32,),
               InkWell(
                 onTap: (){
                  Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleBmiHome()));
@@ -94,7 +73,7 @@ class _MaleHomeScreenState extends State<MaleHomeScreen> {
                   width: 200,
                   color: Color(0xfffbbe28),
                   child: Center(
-                    child: Text('حاسبة مؤشر كتلة الجسم<',
+                    child: Text('  حاسيبه موشر الكتلة   <',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,

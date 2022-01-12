@@ -29,7 +29,7 @@ class _LossWeightGeneralAdviceState extends State<LossWeightGeneralAdvice> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>LossWeightMenu()));
+                      Navigator.pop(context);
                     },
                         icon: Icon(Icons.arrow_back_ios_new,color: Colors.black,)),
                     Builder(

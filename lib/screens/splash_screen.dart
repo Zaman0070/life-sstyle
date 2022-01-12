@@ -9,7 +9,6 @@ import 'package:splash_screen_view/SplashScreenView.dart';
 import 'home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
-  static const String id = 'splash-screen';
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -21,8 +20,8 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
 
     Timer(Duration(seconds: 3), (){
+      Navigator.push(context, MaterialPageRoute(builder: (_)=>LoginScreen()));
 
-      Navigator.pushReplacementNamed(context, LoginScreen.id);
       // FirebaseAuth.instance.authStateChanges().listen((User user) {
       //   if(user == null){
       //     return  Navigator.pushReplacementNamed(context, LoginScreen.id);

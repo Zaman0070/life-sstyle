@@ -9,7 +9,6 @@ import 'home_screen.dart';
 
 class NavigationPage extends StatefulWidget {
 
-  static const String id = 'navigation-screen';
   @override
   _NavigationPageState createState() => _NavigationPageState();
 }

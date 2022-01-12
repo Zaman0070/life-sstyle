@@ -62,7 +62,7 @@ class _MaleWeightLossMenuState extends State<MaleWeightLossMenu> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       IconButton(onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleMainMenu()));
+                        Navigator.pop(context);
                       },
                           icon: Icon(Icons.arrow_back_ios_new,color: Colors.white,)),
                       Builder(
@@ -111,17 +111,8 @@ class _MaleWeightLossMenuState extends State<MaleWeightLossMenu> {
 
                           ),
                           SizedBox(width: 12,),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(height: 12,),
-                              Text('DIET SYSTEM',
-                                style: TextStyle(color: Colors.red.shade800,fontSize: 18,fontWeight: FontWeight.bold),
-                              ),
-                              Text('نظام غذائي',
-                                style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
-                              ),
-                            ],
+                          Text('نظام غذائي',
+                            style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -148,25 +139,16 @@ class _MaleWeightLossMenuState extends State<MaleWeightLossMenu> {
                       ),
                       child: Row(
                         children: [
-                          SizedBox(width: 22,),
+                          SizedBox(width: 15,),
                           Container(
-                            height: 103,
+                            height: 95,
                             width: 110,
                             child: Image.asset('assets/sp_ex.jpg'),
 
                           ),
                           SizedBox(width: 12,),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(height: 12,),
-                              Text('SPORT\nEXERCISES',
-                                style: TextStyle(color: Colors.red.shade800,fontSize: 18,fontWeight: FontWeight.bold),
-                              ),
-                              Text('تمارين رياضية',
-                                style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
-                              ),
-                            ],
+                          Text('تمارين رياضية',
+                            style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -201,17 +183,8 @@ class _MaleWeightLossMenuState extends State<MaleWeightLossMenu> {
 
                           ),
                           SizedBox(width: 12,),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(height: 12,),
-                              Text('GENERAL\nADVICE',
-                                style: TextStyle(color: Colors.red.shade800,fontSize: 18,fontWeight: FontWeight.bold),
-                              ),
-                              Text('نصائح عامة',
-                                style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
-                              ),
-                            ],
+                          Text('نصائح عامة',
+                            style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),

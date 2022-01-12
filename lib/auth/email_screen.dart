@@ -7,7 +7,6 @@ import 'package:life_style_app/service/email_services.dart';
 
 class EmailScreen extends StatefulWidget {
 
-  static const String id = 'email-screen';
 
   @override
   _EmailScreenState createState() => _EmailScreenState();
@@ -174,7 +173,7 @@ class _EmailScreenState extends State<EmailScreen> {
                   alignment: Alignment.centerRight,
                   child: TextButton(
                     onPressed: () {
-                      Navigator.pushReplacementNamed(context, ResetPassword.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>ResetPassword()));
                     },
                     child: Text('Forget Password?',
                   style: TextStyle(

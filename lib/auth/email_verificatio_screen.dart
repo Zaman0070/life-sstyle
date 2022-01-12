@@ -4,7 +4,6 @@ import 'package:open_mail_app/open_mail_app.dart';
 
 class EmailVerificationScreen extends StatelessWidget {
 
-  static const String id = 'email-ver';
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +58,7 @@ class EmailVerificationScreen extends StatelessWidget {
                             },
                           );
                         }
-                        Navigator.pushReplacementNamed(context, HomeScreen.id);
+                        Navigator.push(context, MaterialPageRoute(builder: (_)=>HomeScreen()));
                       },
                       child: Text('Verify Email'),
                     ),

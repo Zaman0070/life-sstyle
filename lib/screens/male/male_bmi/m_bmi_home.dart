@@ -43,7 +43,7 @@ class _MaleBmiHomeState extends State<MaleBmiHome> {
           child: Column(
             children: [
               Container(
-                height: 70,
+                height: 60,
                 width: MediaQuery.of(context).size.width,
                 child: Padding(
                   padding: const EdgeInsets.all(12.0),
@@ -52,7 +52,7 @@ class _MaleBmiHomeState extends State<MaleBmiHome> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       IconButton(onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleHomeScreen()));
+                        Navigator.pop(context);
                       },
                           icon: Icon(Icons.arrow_back_ios_new,color: Colors.black,)),
                       Builder(
@@ -88,7 +88,7 @@ class _MaleBmiHomeState extends State<MaleBmiHome> {
                       child: const Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Text(
-                          'حاسبة مؤشر كتلة الجسم',
+                          'تحليل الوزن',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 25,
@@ -98,9 +98,9 @@ class _MaleBmiHomeState extends State<MaleBmiHome> {
                       ),
                     ),
                     const Padding(
-                      padding: const EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.all(20.0),
                       child: Text(
-                        'سيساعدك حساب مؤشر كتلة الجسم في معرفة ما إذا كان وزن جسمك مناسبًا لطولك.  ',
+                        'سيساعدك حساب مؤشر حساب الكتلة على معرفة ما إذا كان وزن جسمك مناسبا لطولك .',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 22,
@@ -115,7 +115,7 @@ class _MaleBmiHomeState extends State<MaleBmiHome> {
                         children: [
                           kmyText(
                             mycontroller: ageController,
-                            hintText: 'عمر',
+                            hintText: 'العمر',
                             icon: Icons.watch_later_outlined,
                             onchanged: (valueAge) {
                               setState(() {
@@ -126,7 +126,7 @@ class _MaleBmiHomeState extends State<MaleBmiHome> {
                           ),
                           kmyText(
                             mycontroller: hieghtController,
-                            hintText: 'ارتفاع                             (cm)',
+                            hintText: 'الطول بالسنتمتر',
                             icon: Icons.thermostat,
                             onchanged: (valueHeight) {
                               setState(() {
@@ -137,7 +137,7 @@ class _MaleBmiHomeState extends State<MaleBmiHome> {
                           ),
                           kmyText(
                             mycontroller: weightController,
-                            hintText: 'وزن                                 (kg)',
+                            hintText: 'الوزن بالكيلوغرام',
                             icon: Icons.monitor_weight_outlined,
                             onchanged: (valueWeight) {
                               setState(() {
@@ -168,7 +168,7 @@ class _MaleBmiHomeState extends State<MaleBmiHome> {
                             size: 20,
                           ),
                           label: const Text(
-                            'احسب بمي',
+                            'تحليل وزني',
                             textAlign: TextAlign.center,
                             style: TextStyle(fontSize: 25, color: Colors.black),
                           ),

@@ -8,7 +8,6 @@ import 'package:life_style_app/screens/female/female_diet_day_vise/f_days2/snack
 import '../../f_diet.dart';
 
 class FemaleFoodMain2 extends StatefulWidget {
-  static const String id = 'female-food-main-2';
   const FemaleFoodMain2({Key? key}) : super(key: key);
 
   @override
@@ -34,7 +33,7 @@ class _FemaleFoodMain2State extends State<FemaleFoodMain2> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(onPressed: (){
-                      Navigator.pushReplacementNamed(context,FemaleDietSystem.id);
+                      Navigator.pop(context);
                     },
                         icon: Icon(Icons.arrow_back_ios_new,color: Colors.black,)),
                     Builder(

@@ -30,7 +30,7 @@ class _ShowValuesState extends State<ShowValues> {
         child: Column(
           children: [
             Container(
-              height: 70,
+              height: 60,
               width: MediaQuery.of(context).size.width,
               child: Padding(
                 padding: const EdgeInsets.all(12.0),
@@ -39,7 +39,7 @@ class _ShowValuesState extends State<ShowValues> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(onPressed: (){
-                      Navigator.pushReplacementNamed(context, BmiHome.id);
+                      Navigator.pop(context);
                     },
                         icon: Icon(Icons.arrow_back_ios_new,color: Colors.black,)),
                     Builder(
@@ -76,12 +76,12 @@ class _ShowValuesState extends State<ShowValues> {
                           ),
                           Container(
                             height: 60,
-                            width: 330,
+                            width: MediaQuery.of(context).size.width/1.2,
                             color: Color(0xffF6A419),
                             child: const Padding(
                               padding: const EdgeInsets.all(10.0),
                               child: Text(
-                                'حاسبة مؤشر كتلة الجسم',
+                                'تحليل الوزن',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontSize: 25,
@@ -91,18 +91,18 @@ class _ShowValuesState extends State<ShowValues> {
                             ),
                           ),
                           CustomText(
-                            hintText: 'عمر',
+                            hintText: 'سنة',
                             icon: Icons.watch_later_outlined,
                             textUSer: widget.age,
                           ),
                           CustomText(
-                            hintText: 'ارتفاع',
+                            hintText: 'سم',
                             icon: Icons.thermostat,
                             textUSer: widget.height,
                           ),
                           CustomText(
                             icon: Icons.monitor_weight_outlined,
-                            hintText: 'وزن',
+                            hintText: 'كيلوغرام',
                             textUSer: widget.weight,
                           ),
                           Padding(
@@ -121,7 +121,7 @@ class _ShowValuesState extends State<ShowValues> {
                                   size: 20,
                                 ),
                                 label: const Text(
-                                  'احسب بمي',
+                                  'تحليل وزني',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(fontSize: 25, color: Colors.black),
                                 ),

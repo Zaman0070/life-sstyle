@@ -9,7 +9,6 @@ import 'package:life_style_app/screens/female/female_diet_day_vise/f_day1/snack1
 import '../../f_sport.dart';
 
 class FemaleFoodMain extends StatefulWidget {
-  static const String id = 'female-food-main';
 
   @override
   _FemaleFoodMainState createState() => _FemaleFoodMainState();
@@ -34,7 +33,7 @@ class _FemaleFoodMainState extends State<FemaleFoodMain> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(onPressed: (){
-                      Navigator.pushReplacementNamed(context,FemaleDietSystem.id);
+                      Navigator.pop(context);
                     },
                         icon: Icon(Icons.arrow_back_ios_new,color: Colors.black,)),
                     Builder(
@@ -150,7 +149,8 @@ class _FemaleFoodMainState extends State<FemaleFoodMain> {
             SizedBox(height: 40,),
             InkWell(
               onTap: (){
-                Navigator.pushReplacementNamed(context, FemaleSport.id);
+                //Navigator.pushReplacementNamed(context, FemaleSport.id);
+                Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleSport()));
               },
               child: Container(
                 height: 40,

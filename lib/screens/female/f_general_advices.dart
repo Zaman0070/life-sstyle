@@ -4,7 +4,7 @@ import '../drawer_side.dart';
 import 'diet_plane.dart';
 
 class FemaleGeneralAdvice extends StatefulWidget {
-  static const String id = 'female-general-advice';
+
 
   @override
   _FemaleGeneralAdviceState createState() => _FemaleGeneralAdviceState();
@@ -29,7 +29,7 @@ class _FemaleGeneralAdviceState extends State<FemaleGeneralAdvice> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(onPressed: (){
-                      Navigator.pushReplacementNamed(context,DietPlane.id);
+                      Navigator.pop(context);
                     },
                         icon: Icon(Icons.arrow_back_ios_new,color: Colors.black,)),
                     Builder(

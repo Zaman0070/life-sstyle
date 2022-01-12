@@ -9,7 +9,6 @@ import 'package:life_style_app/screens/female/female_diet_day_vise/f_day1/f_food
 import 'package:life_style_app/screens/female/female_diet_day_vise/f_days2/f_food_main2.dart';
 
 class FemaleDietSystem extends StatefulWidget {
-  static const String id = 'female-diet-system';
 
   @override
   _FemaleDietSystemState createState() => _FemaleDietSystemState();
@@ -34,7 +33,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(onPressed: (){
-                      Navigator.pushReplacementNamed(context,DietPlane.id);
+                      Navigator.pop(context);
                     },
                         icon: Icon(Icons.arrow_back_ios_new,color: Colors.black,)),
                     Builder(
@@ -77,14 +76,16 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                 )),
             SizedBox(height: 8,),
             Container(
-              height: 280,
-              width: 350,
+              height: MediaQuery.of(context).size.height/3.12,
+              width: MediaQuery.of(context).size.width/1.05,
               child: GridView(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 7,crossAxisSpacing: 2.0,mainAxisSpacing: 2),
                 children: [
                   InkWell(
                     onTap: (){
-                     Navigator.pushReplacementNamed(context, FemaleFoodMain.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
+
+                     // Navigator.pushReplacementNamed(context, FemaleFoodMain.id);
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -105,7 +106,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain2.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -127,7 +128,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   InkWell(
                     onTap: ()
                     {
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -148,7 +149,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain2.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -169,7 +170,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -190,7 +191,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain2.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -211,7 +212,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -232,7 +233,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain2.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -253,7 +254,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -274,7 +275,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain2.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -295,7 +296,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -316,7 +317,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain2.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -337,7 +338,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -358,7 +359,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain2.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -379,7 +380,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -400,7 +401,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain2.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -421,7 +422,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -442,7 +443,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain2.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -463,7 +464,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -484,7 +485,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain2.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -505,7 +506,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -526,7 +527,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain2.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -547,7 +548,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -568,7 +569,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain2.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -589,7 +590,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -610,7 +611,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain2.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -631,7 +632,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -652,7 +653,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain2.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -673,7 +674,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -694,7 +695,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain2.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -715,7 +716,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.pushReplacementNamed(context, FemaleFoodMain.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -740,7 +741,9 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
             SizedBox(height: 15,),
             InkWell(
               onTap: (){
-                Navigator.pushReplacementNamed(context, FemaleSport.id);
+                Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleSport()));
+
+               // Navigator.pushReplacementNamed(context, FemaleSport.id);
               },
               child: Container(
                 height: 55,

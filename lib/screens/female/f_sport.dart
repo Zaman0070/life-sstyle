@@ -8,7 +8,6 @@ import 'f_exercise_dayvise/f_day2.dart';
 import 'f_exercise_dayvise/f_day3.dart';
 
 class FemaleSport extends StatefulWidget {
-  static const String id = 'female-sport';
 
   @override
   _FemaleSportState createState() => _FemaleSportState();
@@ -36,7 +35,7 @@ class _FemaleSportState extends State<FemaleSport> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(onPressed: () {
-                      Navigator.pushReplacementNamed(context, DietPlane.id);
+                      Navigator.pop(context);
                     },
                         icon: Icon(
                           Icons.arrow_back_ios_new, color: Colors.black,)),
@@ -85,8 +84,8 @@ class _FemaleSportState extends State<FemaleSport> {
                 )),
             SizedBox(height: 8,),
             Container(
-              height: 280,
-              width: 350,
+              height: MediaQuery.of(context).size.height/3.12,
+              width: MediaQuery.of(context).size.width/1.05,
               child: GridView(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 7,
@@ -809,7 +808,9 @@ class _FemaleSportState extends State<FemaleSport> {
             SizedBox(height: 15,),
             InkWell(
               onTap: () {
-                Navigator.pushReplacementNamed(context, FemaleDietSystem.id);
+                Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleDietSystem()));
+
+                //Navigator.pushReplacementNamed(context, FemaleDietSystem.id);
               },
               child: Container(
                 height: 55,

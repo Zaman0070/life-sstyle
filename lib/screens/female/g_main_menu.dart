@@ -9,7 +9,6 @@ import 'package:provider/provider.dart';
 
 import '../drawer_side.dart';
 class MainMenu extends StatefulWidget {
-  static const String id = 'main-menu-screen';
   const MainMenu({Key? key}) : super(key: key);
 
   @override
@@ -41,7 +40,7 @@ class _MainMenuState extends State<MainMenu> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(onPressed: () {
-                      Navigator.pushReplacementNamed(context, FemaleScreen.id);
+                      Navigator.pop(context);
                     },
                         icon: Icon(
                           Icons.arrow_back_ios_new, color: Colors.white,)),
@@ -70,25 +69,12 @@ class _MainMenuState extends State<MainMenu> {
             SizedBox(height: 55,),
             InkWell(
               onTap: (){
-                Navigator.pushReplacementNamed(context, DietPlane.id);
+                Navigator.push(context, MaterialPageRoute(builder: (_)=>DietPlane()));
               },
               child: Container(
                   height: 100,
                   width: 350,
-                  child: Row(
-                    children: [
-                      SizedBox(width: 14,),
-                      Text('WEIGHT GAIN',
-                      style: TextStyle(
-                          color: Colors.red.shade800,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 18
-                      ),
-                      ),
-                      SizedBox(width: 5,),
-                      Image.asset('assets/weightgain.jpg'),
-                    ],
-                  )),
+                  child: Image.asset('assets/weightgain.jpg')),
             ),
             SizedBox(height: 55,),
             InkWell(
@@ -98,20 +84,7 @@ class _MainMenuState extends State<MainMenu> {
               child: Container(
                   height: 100,
                   width: 350,
-                  child: Row(
-                    children: [
-                      SizedBox(width: 14,),
-                      Text('WEIGHT LOSS',
-                        style: TextStyle(
-                            color: Colors.red.shade800,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 18
-                        ),
-                      ),
-                      SizedBox(width: 5,),
-                      Image.asset('assets/lossweight.jpg'),
-                    ],
-                  )),
+                  child: Image.asset('assets/lossweight.jpg')),
             ),
           ],
         ),

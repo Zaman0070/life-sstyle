@@ -117,7 +117,7 @@ class _ShopHomeState extends State<ShopHome> {
                 Padding(
                   padding: const EdgeInsets.only(left: 45.0,right: 45),
                   child: Container(
-                    height: 115,
+                    height: MediaQuery.of(context).size.height/7.1,
                     width: 300,
                     child: Directionality(
                       textDirection: TextDirection.rtl,

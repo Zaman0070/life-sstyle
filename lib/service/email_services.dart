@@ -40,7 +40,8 @@ class EmailAuthentication{
           password: password
       );
       if(userCredential.user!.uid!=null){
-        Navigator.pushReplacementNamed(context, HomeScreen.id);
+        Navigator.push(context, MaterialPageRoute(builder: (_)=>HomeScreen()));
+
       }
 
     }on FirebaseAuthException catch(e){
@@ -77,7 +78,8 @@ class EmailAuthentication{
                 //verification email code
 
                   await userCredential.user!.sendEmailVerification().then((value) {
-                    Navigator.pushReplacementNamed(context, EmailVerificationScreen.id);
+                    Navigator.push(context, MaterialPageRoute(builder: (_)=>EmailVerificationScreen()));
+
                   });
 
               }).catchError((onError){

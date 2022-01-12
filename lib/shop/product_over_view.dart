@@ -60,6 +60,7 @@ class _ProductOverviewState extends State<ProductOverview> {
             CircleAvatar(
                 backgroundColor:  Color(0xffFDB640),
                 child: Image.asset('assets/icons/shopping-cart.png',height: 20,)),
+            SizedBox(width: 5,),
             Text('${widget.count}+',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black,fontSize: 16),),
 
 

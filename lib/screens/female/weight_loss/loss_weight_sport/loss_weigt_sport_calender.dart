@@ -41,7 +41,7 @@ class _LossWeightSportCalenderState extends State<LossWeightSportCalender> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>LossWeightMenu()));
+                      Navigator.pop(context);
                     },
                         icon: Icon(Icons.arrow_back_ios_new,color: Colors.black,)),
                     Builder(
@@ -84,8 +84,8 @@ class _LossWeightSportCalenderState extends State<LossWeightSportCalender> {
                 )),
             SizedBox(height: 8,),
             Container(
-              height: 280,
-              width: 350,
+              height: MediaQuery.of(context).size.height/3.12,
+              width: MediaQuery.of(context).size.width/1.05,
               child: GridView(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 7,crossAxisSpacing: 3.0,mainAxisSpacing: 3),
                 children: [

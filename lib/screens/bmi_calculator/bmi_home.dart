@@ -9,7 +9,6 @@ import 'field_text.dart';
 
 
 class BmiHome extends StatefulWidget {
-  static const String id = 'bmi-home';
   const BmiHome({Key? key}) : super(key: key);
 
   @override
@@ -48,7 +47,7 @@ class _BmiHomeState extends State<BmiHome> {
           child: Column(
             children: [
               Container(
-                height: 70,
+                height: 60,
                 width: MediaQuery.of(context).size.width,
                 child: Padding(
                   padding: const EdgeInsets.all(12.0),
@@ -57,7 +56,7 @@ class _BmiHomeState extends State<BmiHome> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       IconButton(onPressed: (){
-                        Navigator.pushReplacementNamed(context, FemaleScreen.id);
+                        Navigator.pop(context);
                       },
                           icon: Icon(Icons.arrow_back_ios_new,color: Colors.black,)),
                       Builder(
@@ -93,19 +92,20 @@ class _BmiHomeState extends State<BmiHome> {
                       child: const Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Text(
-                          'حاسبة مؤشر كتلة الجسم',
+                          'تحليل الوزن',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 25,
+                            fontWeight: FontWeight.bold,
                             color: Colors.black,
                           ),
                         ),
                       ),
                     ),
                     const Padding(
-                      padding: const EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.all(20.0),
                       child: Text(
-                        'سيساعدك حساب مؤشر كتلة الجسم في معرفة ما إذا كان وزن جسمك مناسبًا لطولك.  ',
+                        'سيساعدك حساب مؤشر حساب الكتلة على معرفة ما إذا كان وزن جسمك مناسبا لطولك . ',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 22,
@@ -120,7 +120,7 @@ class _BmiHomeState extends State<BmiHome> {
                         children: [
                           kmyText(
                             mycontroller: ageController,
-                            hintText: 'عمر',
+                            hintText: 'العمر',
                             icon: Icons.watch_later_outlined,
                             onchanged: (valueAge) {
                               setState(() {
@@ -131,7 +131,7 @@ class _BmiHomeState extends State<BmiHome> {
                           ),
                           kmyText(
                             mycontroller: hieghtController,
-                            hintText: 'ارتفاع                             (cm)',
+                            hintText: 'الطول بالسنتمتر ',
                             icon: Icons.thermostat,
                             onchanged: (valueHeight) {
                               setState(() {
@@ -142,7 +142,7 @@ class _BmiHomeState extends State<BmiHome> {
                           ),
                           kmyText(
                             mycontroller: weightController,
-                            hintText: 'وزن                                 (kg)',
+                            hintText: 'الوزن بالكيلوغرام',
                             icon: Icons.monitor_weight_outlined,
                             onchanged: (valueWeight) {
                               setState(() {
@@ -173,7 +173,7 @@ class _BmiHomeState extends State<BmiHome> {
                             size: 20,
                           ),
                           label: const Text(
-                            'احسب بمي',
+                            'تحليل وزني',
                             textAlign: TextAlign.center,
                             style: TextStyle(fontSize: 25, color: Colors.black),
                           ),

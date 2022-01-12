@@ -67,7 +67,8 @@ class GoogleAuth{
   Future<UserCredential?> signInWithFacebook(context) async {
     final LoginResult result = await FacebookAuth.instance.login();
     if(result.status == LoginStatus.success){
-      Navigator.pushReplacementNamed(context, HomeScreen.id);
+      // Navigator.pushReplacementNamed(context, HomeScreen.id);
+      Navigator.push(context, MaterialPageRoute(builder: (_)=>HomeScreen()));
       // Create a credential from the access token
       final OAuthCredential credential = FacebookAuthProvider.credential(result.accessToken!.token);
       // Once signed in, return the UserCredential

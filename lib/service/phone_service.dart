@@ -19,7 +19,8 @@ class PhoneService{
     List<DocumentSnapshot> document = result.docs;
 
     if(document.isNotEmpty){
-      Navigator.pushReplacementNamed(context, HomeScreen.id);
+      Navigator.push(context, MaterialPageRoute(builder: (_)=>HomeScreen()));
+
     }else{
 
 
@@ -30,7 +31,8 @@ class PhoneService{
         'name' : user!.displayName,
         'url': user!.photoURL
       }).then((value){
-        Navigator.pushReplacementNamed(context, HomeScreen.id);
+        Navigator.push(context, MaterialPageRoute(builder: (_)=>HomeScreen()));
+
       })
           .catchError((error)=>print('failed to add user : $error'));
     }
@@ -66,7 +68,7 @@ class PhoneService{
   Future<UserCredential?> signInWithFacebook(context) async {
     final LoginResult result = await FacebookAuth.instance.login();
     if(result.status == LoginStatus.success){
-      Navigator.pushReplacementNamed(context, HomeScreen.id);
+      Navigator.push(context, MaterialPageRoute(builder: (_)=>HomeScreen()));
       final OAuthCredential credential = FacebookAuthProvider.credential(result.accessToken!.token);
       // Once signed in, return the UserCredential
       return await FirebaseAuth.instance.signInWithCredential(credential);

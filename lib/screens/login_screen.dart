@@ -16,7 +16,6 @@ String prettyPrint(Map json) {
   return pretty;
 }
 class LoginScreen extends StatefulWidget {
-  static const String id = 'login-screen';
 
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -132,14 +131,7 @@ class _LoginScreenState extends State<LoginScreen> {
               //color: Colors.grey,
               child: Column(
                 children: [
-                  Text('LOGIN USING FACEBOOK',
-                  style: TextStyle(
-                    color: Colors.red.shade800,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w400
-                  ),
-                  ),
-                  SizedBox(height: 8,),
+                  SizedBox(height: 25,),
 
 
 
@@ -187,42 +179,35 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                     child: Container(
                       height: 50,
-                      width: MediaQuery.of(context).size.width/1.1,
+                      width: MediaQuery.of(context).size.width/1.25,
                       color: Color(0xff3b5998),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children:  [
-                         Container(
-                           height: 50,
-                           width: 50,
-                           color: Colors.white10,
-                           child: Image.asset('assets/icons/facebook.png',color: Colors.grey.shade300,),
-                         ),
-                          SizedBox(width: 10,),
-                          Center(child: Text('تسجيل الدخول باستخدام الفيسبوك',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 18
-                          ),
-                          )),
-                        ],
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 18.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children:  [
+                           Container(
+                             height: 50,
+                             width: 50,
+                             color: Colors.white10,
+                             child: Image.asset('assets/icons/facebook.png',color: Colors.grey.shade300,),
+                           ),
+                            Center(child: Text('الدخول باستخدام الفايسبوك',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 18
+                            ),
+                            )),
+                          ],
+                        ),
                       ),
                     ),
                   ),
 
 
-
-
-                  SizedBox(height: 6,),
-                  Text('LOGIN USING GOOGLE',
-                    style: TextStyle(
-                        color: Colors.red.shade800,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w400
-                    ),
-                  ),
-                  SizedBox(height: 8,),
+                  SizedBox(height: 20,),
                   InkWell(
                     onTap: ()async {
                       User? user =await GoogleAuth.signInWithGoogle(context: context);
@@ -233,75 +218,53 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                     child: Container(
                       height: 50,
-                      width: MediaQuery.of(context).size.width/1.1,
+                      width: MediaQuery.of(context).size.width/1.25,
                       color: Colors.red.shade700,
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children:  [
-                          Container(
-                            height: 50,
-                            width: 50,
-                            color: Colors.white10,
-                            child: Image.asset('assets/icons/email.png',color: Colors.grey.shade300,),
-                          ),
-                          SizedBox(width: 6,),
-                          Center(child: Text('سجيل الدخول باستخدام البريد الإلكتروني',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 18
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 18.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children:  [
+                            Container(
+                              height: 50,
+                              width: 50,
+                              color: Colors.white10,
+                              child: Image.asset('assets/icons/email.png',color: Colors.grey.shade300,),
                             ),
-                          )),
-                        ],
+                            SizedBox(width: 6,),
+                            Center(child: Text('الدخول باستخدام الإيميل',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 18
+                              ),
+                            )),
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                  SizedBox(height: 12,),
+                  SizedBox(height: 40,),
                   InkWell(
                     onTap: (){
-                      Navigator.pushNamed(context, EmailScreen.id);
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>EmailScreen()));
+
                     },
-                    child: Container(
-                      child: Column(
-                        children: [
-                          Text("I DON'T HAVE AN ACCOUNT",
-                            style: TextStyle(
-                                color: Colors.red.shade800,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w400
-                            ),
-                          ),
-                          Text('لا املك حساب',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w400
-                            ),
-                          ),
-                        ],
+                    child: Text('ليس عندي حساب',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
-                  SizedBox(height: 15,),
-                  Container(
-                    child: Column(
-                      children: [
-                        Text("FORGET PASSWORD",
-                          style: TextStyle(
-                              color: Colors.red.shade800,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w400
-                          ),
-                        ),
-                        Text('هل نسيت كلمة المرور ؟',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400
-                          ),
-                        ),
-
-                      ],
+                  SizedBox(height: 20,),
+                  Text('نسيت كلمة السر    ؟',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold
                     ),
                   ),
 

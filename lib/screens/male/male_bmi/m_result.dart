@@ -104,7 +104,7 @@ class _MaleBmiResultState extends State<MaleBmiResult> {
         child: Column(
           children: [
             Container(
-              height: 70,
+              height: 60,
               width: MediaQuery.of(context).size.width,
               child: Padding(
                 padding: const EdgeInsets.all(12.0),
@@ -155,7 +155,7 @@ class _MaleBmiResultState extends State<MaleBmiResult> {
                       child: const Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Text(
-                          'نتيجة الآلة الحاسبة',
+                          'نتائج تحليل الوزن',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontSize: 25,
@@ -210,11 +210,11 @@ class _MaleBmiResultState extends State<MaleBmiResult> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children:  const [
                               WeigthBox(
-                                boxText: 'نقص الوزن',
+                                boxText: 'وزن ناقص',
                                 color: Color(0xffCCE0FB),
                               ),
                               WeigthBox(
-                                boxText: 'الوزن المناسب',
+                                boxText: 'وزن صحی',
                                 color: Color(0xff91E7B6),
                               ),
                               WeigthBox(

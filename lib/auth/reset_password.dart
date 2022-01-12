@@ -10,7 +10,6 @@ class ResetPassword extends StatelessWidget {
   var emailController = TextEditingController();
   final formKey  = GlobalKey<FormState>();
 
-  static const String id = 'reset-password';
 
   bool validate = true;
 
@@ -31,7 +30,7 @@ class ResetPassword extends StatelessWidget {
                 if(formKey.currentState!.validate()){
                   FirebaseAuth.instance.sendPasswordResetEmail(email: emailController.text)
                       .then((value) {
-                    Navigator.pushReplacementNamed(context, EmailScreen.id);
+                    Navigator.push(context, MaterialPageRoute(builder: (_)=>EmailScreen()));
                   });
 
                 }

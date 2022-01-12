@@ -48,25 +48,7 @@ class MyApp extends StatelessWidget {
           theme:  ThemeData(scaffoldBackgroundColor: const Color(0xFFEFEFEF)),
         title: 'Life Style App',
         debugShowCheckedModeBanner: false,
-          initialRoute: NavigationPage.id,
-          routes: {
-            NavigationPage.id: (_) => NavigationPage(),
-            SplashScreen.id: (_) => SplashScreen(),
-            LoginScreen.id: (_) => LoginScreen(),
-            HomeScreen.id: (_) => HomeScreen(),
-            EmailScreen.id: (_) => EmailScreen(),
-            EmailVerificationScreen.id: (_) => EmailVerificationScreen(),
-            ResetPassword.id: (_) => ResetPassword(),
-            FemaleScreen.id: (_) => FemaleScreen(),
-            BmiHome.id: (_) => BmiHome(),
-            MainMenu.id: (_) => MainMenu(),
-            DietPlane.id: (_) => DietPlane(),
-            FemaleDietSystem.id: (_) => FemaleDietSystem(),
-            FemaleSport.id: (_) => FemaleSport(),
-            FemaleGeneralAdvice.id: (_) => FemaleGeneralAdvice(),
-            FemaleFoodMain.id: (_) => FemaleFoodMain(),
-            FemaleFoodMain2.id: (_) => FemaleFoodMain2(),
-          }
+         home: NavigationPage(),
       ),
     );
   }

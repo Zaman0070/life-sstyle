@@ -36,7 +36,7 @@ class _MaleMainMenuState extends State<MaleMainMenu> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleHomeScreen()));
+                      Navigator.pop(context);
                     },
                         icon: Icon(
                           Icons.arrow_back_ios_new, color: Colors.white,)),
@@ -70,20 +70,7 @@ class _MaleMainMenuState extends State<MaleMainMenu> {
               child: Container(
                   height: 100,
                   width: 350,
-                  child: Row(
-                    children: [
-                      SizedBox(width: 14,),
-                      Text('WEIGHT GAIN',
-                        style: TextStyle(
-                            color: Colors.red.shade800,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 18
-                        ),
-                      ),
-                      SizedBox(width: 5,),
-                      Image.asset('assets/weightgain.jpg'),
-                    ],
-                  )),
+                  child: Image.asset('assets/weightgain.jpg')),
             ),
             SizedBox(height: 55,),
             InkWell(
@@ -93,20 +80,7 @@ class _MaleMainMenuState extends State<MaleMainMenu> {
               child: Container(
                   height: 100,
                   width: 350,
-                  child: Row(
-                    children: [
-                      SizedBox(width: 14,),
-                      Text('WEIGHT LOSS',
-                        style: TextStyle(
-                            color: Colors.red.shade800,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 18
-                        ),
-                      ),
-                      SizedBox(width: 5,),
-                      Image.asset('assets/lossweight.jpg'),
-                    ],
-                  )),
+                  child: Image.asset('assets/lossweight.jpg')),
             ),
           ],
         ),
