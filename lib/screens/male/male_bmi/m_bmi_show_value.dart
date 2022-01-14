@@ -4,7 +4,7 @@ import 'package:life_style_app/screens/bmi_calculator/show_value.dart';
 import 'package:life_style_app/screens/male/male_bmi/m_bmi_home.dart';
 import 'package:life_style_app/screens/male/male_bmi/m_result.dart';
 
-import '../../drawer_side.dart';
+import '../../drawers/m_g_drawer_side.dart';
 
 class MaleBmiShowValue extends StatefulWidget {
   final String age;

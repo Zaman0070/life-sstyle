@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:life_style_app/screens/drawers/f_g_drawer.dart';
+import '../../wp_api.dart';
 
-import '../drawer_side.dart';
-import 'diet_plane.dart';
+
 
 class FemaleGeneralAdvice extends StatefulWidget {
 
@@ -15,7 +17,7 @@ class _FemaleGeneralAdviceState extends State<FemaleGeneralAdvice> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      endDrawer: DrawerSide(),
+      endDrawer: FemaleGainDrawer(),
       body: SafeArea(
         child:Column(
           children: [
@@ -45,44 +47,98 @@ class _FemaleGeneralAdviceState extends State<FemaleGeneralAdvice> {
                 ),
               ),
             ),
+            SizedBox(height: 10,),
             Container(
-              height: 130,
-              width: 200,
-              child: Image.asset('assets/advise.jpg'),
-            ),
-            SizedBox(height: 8,),
-            Container(
-              height: 55,
-              width: 270,
-              color: Color(0xffF7B044),
-              child: Center(
-                child: Text('نصائح عامة',
-                  style: TextStyle(fontSize: 32,fontWeight: FontWeight.w500),
-                ),
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height/1.2,
+              child: FutureBuilder(
+                future: fetchWpPosts(),
+                  builder: (BuildContext context, AsyncSnapshot snapshot){
+                  if(snapshot.hasData){
+                    return ListView.builder(
+                      itemCount: snapshot.data.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        Map wppost = snapshot.data[index];
+                         //var imageUrl = wppost["_embedded"]["wp:featuredmedia"][0]["source-url"];
+                        return Column(
+                          children: [
+
+                            PostTile(
+                              href: wppost["_links"]["wp:featuredmedia"][0]["href"],
+                              title:wppost["title"]["rendered"],
+                              desc: wppost["excerpt"]["rendered"],
+                              content:wppost["content"]["rendered"]
+
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  }
+                  return Center(child: CircularProgressIndicator());
+                  }
               ),
             ),
-            SizedBox(height: 15,),
-            Directionality(
-                textDirection: TextDirection.rtl,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 22.0,right: 40),
-                  child: Column(
-                    children: const [
-                      Text('ملاحظة :',
-                        style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
-                      ),
-                      Text('إن تناول ثلاث وجبات على الأقل في اليوم يمكن أن يجعل من السهل زيادة تناول السعرات الحرارية. يمكن أن يساعد تناول الوجبات الخفيفة بين الوجبات أيضًا على زيادة عدد السعرات الحرارية في النظام الغذائي. بالاقتران مع تدريبات الوزن المنتظمة ، فإن استهلاك 0.8-2.0 جرام من البروتين لكل كيلوغرام من وزن الجسم سيزيد من كتلة عضلات الشخص. هذا ضروري لزيادة الوزن بشكل صحي. قد يجد الأشخاص الذين يعانون من قلة الشهية أن المخفوق أو العصير عالي السعرات الحرارية أكثر جاذبية من وجبة كبيرة. زيادة الوزن بشكل آمن يمكن أن تتطلب الصبر والتصميم. ليس من الممكن دائمًا رؤية النتائج على الفور. كل شخص مختلف ، وقد يستغرق الأمر وقتًا أطول بالنسبة لبعض الأشخاص مقارنة بالآخرين.',
-                        style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14,letterSpacing: -1.5),
-                      ),
-                      Text('يتوقف بعض الأشخاص عن ممارسة تمارين القلب والأوعية الدموية عندما يحاولون زيادة الوزن ، ولكنها ضرورية للحفاظ على صحة القلب والرئتين والدماغ. الجري والسباحة وركوب الدراجات كلها طرق جيدة لممارسة تمارين القلب والأوعية الدموية.',
-                        style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14,letterSpacing: -1.5),
-                      ),
-                    ],
-                  ),
-                )),
+
           ],
         ),
       ),
     );
   }
+}
+
+class PostTile extends StatefulWidget {
+  String? title,desc,href,content;
+  PostTile({this.title,this.desc,this.content,this.href});
+
+  @override
+  _PostTileState createState() => _PostTileState();
+}
+
+class _PostTileState extends State<PostTile> {
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
+      child: Directionality(
+        textDirection: TextDirection.rtl,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            FutureBuilder(
+              future: fetchWpPostImageUrl(widget.href),
+                builder: (BuildContext context, AsyncSnapshot ssnapshot){
+                if(ssnapshot.hasData){
+                  return ClipRRect(
+                      borderRadius: BorderRadius.circular(30),
+                      child: Image.network(ssnapshot.data["guid"]["rendered"]));
+
+                }
+                return CircularProgressIndicator();
+                }
+            ),
+            SizedBox(height: 10,),
+
+            Text(widget.title!,style: TextStyle(fontSize: 22,fontWeight: FontWeight.w700),),
+            SizedBox(height: 10,),
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Text(widget.desc!.replaceAll("&#8211;", "" ).replaceAll("nbsp", '').replaceAll("&;", "").replaceAll("<p>", "").replaceAll("<", "").replaceAll(">", "").replaceAll("p", "").replaceAll("/", "").replaceAll(":", ""),
+              style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+
+           Padding(
+             padding: const EdgeInsets.all(8.0),
+             child: Text(widget.content!.replaceAll("8211", "").replaceAll("<br>", "").replaceAll("&#;", "").replaceAll("nbsp", '').replaceAll("&;", "").replaceAll("<p>", "").replaceAll("<", "").replaceAll(">", "").replaceAll("p", "").replaceAll("/", "")
+             .replaceAll("class", "").replaceAll("_", "").replaceAll("has-text-align-right", "").replaceAll("strong", "").replaceAll("=", "").replaceAll('"', "").replaceAll(":", "")
+             ),
+           ),
+          ],
+        ),
+      ),
+    );
+  }
+
 }

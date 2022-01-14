@@ -55,6 +55,10 @@ dependencies:
   add_to_cart_animation: ^1.0.1
   favorite_button: ^0.0.4
   share: ^2.0.4
+  woosignal: ^3.0.3
+  http: ^0.13.4
+  html: ^0.15.0
+
 
 
 dev_dependencies:

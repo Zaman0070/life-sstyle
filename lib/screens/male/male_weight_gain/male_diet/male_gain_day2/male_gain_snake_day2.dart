@@ -5,11 +5,12 @@ import 'package:life_style_app/shop/review_star.dart';
 import 'package:life_style_app/shop/shop_home.dart';
 import 'package:share/share.dart';
 
-import '../../../../drawer_side.dart';
+import '../../../../drawers/m_g_drawer_side.dart';
 import 'male_gain_food_day2.dart';
 
 class MaleGainSnakeDay2 extends StatefulWidget {
-  const MaleGainSnakeDay2({Key? key}) : super(key: key);
+  String youm;
+  MaleGainSnakeDay2({required this.youm,Key? key}) : super(key: key);
 
   @override
   _MaleGainSnakeDay2State createState() => _MaleGainSnakeDay2State();
@@ -64,9 +65,9 @@ class _MaleGainSnakeDay2State extends State<MaleGainSnakeDay2> {
                     },
                         icon: Icon(Icons.arrow_back_ios_new,color: Colors.white,)),
 
-                    // Center(child: Text('اليوم ثاني',
-                    //   style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
-                    // )),
+                    Center(child: Text(widget.youm,
+                      style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
+                    )),
                     Builder(
                       builder: (context){
                         return IconButton(onPressed: (){
@@ -112,7 +113,7 @@ class _MaleGainSnakeDay2State extends State<MaleGainSnakeDay2> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(height: 15,),
-                        Text('خبز التوست و البيض',
+                        Text('المعكرونة العضوية',
                           style: TextStyle(fontWeight: FontWeight.w500,fontSize: 26,letterSpacing: 1.5),
                         ),
                         Row(

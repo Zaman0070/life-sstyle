@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:life_style_app/screens/male/male_weight_gain/male_sport/male_gain_sport_calender.dart';
 
-import '../../../../drawer_side.dart';
+import '../../../../drawers/m_g_drawer_side.dart';
 
 class MaleGainSportDay3 extends StatefulWidget {
   const MaleGainSportDay3({Key? key}) : super(key: key);
@@ -77,23 +77,24 @@ class _MaleGainSportDay3State extends State<MaleGainSportDay3> {
               height: 205,
               child: CircularCountDownTimer(
                 duration: duration,
-                initialDuration: 600,
+                initialDuration: 0,
                 controller:_controller,
                 width: MediaQuery.of(context).size.width / 1.6,
                 height: MediaQuery.of(context).size.height / 2,
-                ringColor: Colors.grey,
-                fillColor:   Color(0xffF4A02C),
+                ringColor: Color(0xffF4A02C),
+                fillColor:   Colors.grey,
                 strokeWidth: 15.0,
                 strokeCap: StrokeCap.round,
                 textStyle: TextStyle(
                     fontSize: 33.0, color: Colors.black, fontWeight: FontWeight.bold),
                 textFormat: CountdownTextFormat.MM_SS,
-                isReverse: true,
-                isReverseAnimation: false,
+                isReverse: false,
                 isTimerTextShown: true,
+                isReverseAnimation: false,
                 autoStart: false,
+
                 onStart: () {
-                  print('Countdown Started');
+
                 },
                 onComplete: () {
                   print('Countdown Ended');
@@ -121,18 +122,31 @@ class _MaleGainSportDay3State extends State<MaleGainSportDay3> {
                         )
                             : Icon(Icons.play_arrow, size: 25.0),
                         onPressed: () {
-                          onPressed ?_controller.pause() : _controller.restart();
                           setState(() {
-                            onPressed = !onPressed;
+                            if(onPressed){
+                              onPressed =false;
+                              _controller.pause();
+
+                            }else{
+                              onPressed=true;
+                              _controller.resume();
+                            }
+
                           });
                         }),
                   ),
-                  button(icon: Icons.stop, onPressed: ()=> _controller.pause())
+                  button(icon: Icons.stop, onPressed: (){
+                    _controller.restart();
+                    _controller.pause();
+                    setState(() {
+                      onPressed =false;
+                    });
+                  })
                 ],
               ),
             ),
             Container(
-              height: 384.2,
+              height: MediaQuery.of(context).size.height/2.1,
               width: MediaQuery.of(context).size.width,
               child: Stack(
                 children: [
@@ -141,13 +155,13 @@ class _MaleGainSportDay3State extends State<MaleGainSportDay3> {
                     child: ClipPath(
                       clipper: WaveClipperOne(reverse: true),
                       child: Container(
-                        height: 250,
+                        height: MediaQuery.of(context).size.width/1.5,
                         width: MediaQuery.of(context).size.width,
                         color: Color(0xffF4A02C),
                         child: Center(
                             child: Column(
                               children: const [
-                                SizedBox(height: 105,),
+                                SizedBox(height: 75,),
                                 Text("LUNGE",
                                   style: TextStyle(
                                       fontSize: 22,
@@ -157,7 +171,7 @@ class _MaleGainSportDay3State extends State<MaleGainSportDay3> {
                                   textDirection: TextDirection.rtl,
                                   child: Padding(
                                     padding: EdgeInsets.only(left: 20.0,right: 20),
-                                    child: Text("تمرين الاندفاع أثناء المشي هو تمرين ممتاز لبناء وتقوية عضلات الألوية مع استهداف عضلات الفخذ أيضًا وتحسين توازنك.",
+                                    child: Text("تمرين الاندفاع أثناء المشي هو تمرين ممتاز لبناء وتقوية عضلات الألوية مع استهداف عضلات ",
                                       style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.bold
@@ -173,8 +187,8 @@ class _MaleGainSportDay3State extends State<MaleGainSportDay3> {
                   ),
                   Positioned(
                       top: 0,
-                      left: 80,
-                      child: Image.asset('assets/male/mgain2.png',height: 240,)),
+                      left: 90,
+                      child: Image.asset('assets/male/mgain2.png',height: 230,)),
                 ],
               ),
             ),

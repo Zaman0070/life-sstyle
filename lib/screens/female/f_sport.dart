@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:life_style_app/screens/drawer_side.dart';
+import 'package:life_style_app/screens/drawers/m_g_drawer_side.dart';
 import 'package:life_style_app/screens/female/f_diet.dart';
 import 'package:life_style_app/screens/female/f_exercise_dayvise/f_day1.dart';
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:life_style_app/screens/drawer_side.dart';
+import 'package:life_style_app/screens/drawers/f_g_drawer.dart';
+import 'package:life_style_app/screens/drawers/m_g_drawer_side.dart';
 import 'package:life_style_app/screens/female/female_diet_day_vise/f_days2/bf2.dart';
 import 'package:life_style_app/screens/female/female_diet_day_vise/f_days2/dinner2.dart';
 import 'package:life_style_app/screens/female/female_diet_day_vise/f_days2/lunch2.dart';
@@ -8,7 +9,8 @@ import 'package:life_style_app/screens/female/female_diet_day_vise/f_days2/snack
 import '../../f_diet.dart';
 
 class FemaleFoodMain2 extends StatefulWidget {
-  const FemaleFoodMain2({Key? key}) : super(key: key);
+  String youm;
+  FemaleFoodMain2({required this.youm,Key? key}) : super(key: key);
 
   @override
   _FemaleFoodMain2State createState() => _FemaleFoodMain2State();
@@ -19,7 +21,7 @@ class _FemaleFoodMain2State extends State<FemaleFoodMain2> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      endDrawer: DrawerSide(),
+      endDrawer: FemaleGainDrawer(),
       body: SafeArea(
         child:Column(
           children: [
@@ -75,7 +77,7 @@ class _FemaleFoodMain2State extends State<FemaleFoodMain2> {
                 children: [
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>LunchDay2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>LunchDay2(youm: widget.youm,)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -92,7 +94,7 @@ class _FemaleFoodMain2State extends State<FemaleFoodMain2> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>BreakFastday2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>BreakFastday2(youm: widget.youm,)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -110,7 +112,7 @@ class _FemaleFoodMain2State extends State<FemaleFoodMain2> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>DinnerDay2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>DinnerDay2(youm: widget.youm,)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -127,7 +129,7 @@ class _FemaleFoodMain2State extends State<FemaleFoodMain2> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>SnackDay2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>SnackDay2(youm: widget.youm,)));
                     },
                     child: Container(
                       decoration: BoxDecoration(

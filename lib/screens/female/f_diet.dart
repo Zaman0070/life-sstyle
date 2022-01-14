@@ -2,7 +2,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:life_style_app/screens/drawer_side.dart';
+import 'package:life_style_app/screens/drawers/f_g_drawer.dart';
+import 'package:life_style_app/screens/drawers/m_g_drawer_side.dart';
 import 'package:life_style_app/screens/female/diet_plane.dart';
 import 'package:life_style_app/screens/female/f_sport.dart';
 import 'package:life_style_app/screens/female/female_diet_day_vise/f_day1/f_food1.dart';
@@ -19,7 +20,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      endDrawer: DrawerSide(),
+      endDrawer: FemaleGainDrawer(),
       body: SafeArea(
         child:Column(
           children: [
@@ -83,7 +84,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                 children: [
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain(youm: 'اليوم الأول',)));
 
                      // Navigator.pushReplacementNamed(context, FemaleFoodMain.id);
                     },
@@ -106,7 +107,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2(youm: 'اليوم الثاني',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -128,7 +129,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   InkWell(
                     onTap: ()
                     {
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain(youm: 'اليوم الثالث',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -149,7 +150,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2(youm: 'اليوم الرابع',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -170,7 +171,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain(youm: 'اليوم الخامس',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -191,7 +192,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2(youm: 'اليوم السادس',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -212,7 +213,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain(youm: 'اليوم السابع',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -233,7 +234,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2(youm: 'اليوم الثامن',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -254,7 +255,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain(youm: 'اليوم التاسع',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -275,7 +276,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2(youm: 'اليوم العاشر',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -296,7 +297,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain(youm: 'اليوم الحادي عشر',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -317,7 +318,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2(youm: 'اليوم الثاني عشر',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -338,7 +339,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain(youm: 'اليوم الثالث عشر',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -359,7 +360,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2(youm: 'اليوم الرابع عشر',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -380,7 +381,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain(youm: 'اليوم الخامس عشر',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -401,7 +402,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2(youm: 'اليوم السادس عشر',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -422,7 +423,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain(youm: 'اليوم السابع عشر',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -443,7 +444,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2(youm: 'اليوم الثامن عشر',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -464,7 +465,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain(youm: 'اليوم التاسع عشر',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -485,7 +486,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2(youm: 'اليوم العشرون',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -506,7 +507,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain(youm: 'اليوم الحادي والعشرون',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -527,7 +528,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2(youm: 'اليوم الثاني والعشرون',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -548,7 +549,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain(youm: 'اليوم الثالث والعشرون',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -569,7 +570,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2(youm: 'اليوم الرابع والعشرون',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -590,7 +591,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain(youm: 'اليوم الخامس والعشرون',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -611,7 +612,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2(youm: 'اليوم السادس والعشرون',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -632,7 +633,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain(youm: 'ليوم السابع والعشرون',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -653,7 +654,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2(youm: 'اليوم الثامن والعشرون',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -674,7 +675,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain(youm: 'اليوم التاسع والعشرون',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -695,7 +696,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain2(youm: 'اليوم الثلاثين',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -716,7 +717,7 @@ class _FemaleDietSystemState extends State<FemaleDietSystem> {
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>FemaleFoodMain(youm: 'اليوم الواحد والثلاثون',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(

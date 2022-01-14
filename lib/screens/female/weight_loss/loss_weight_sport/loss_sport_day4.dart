@@ -1,8 +1,9 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
+import 'package:life_style_app/screens/drawers/f_l_drawer.dart';
 
-import '../../../drawer_side.dart';
+import '../../../drawers/m_g_drawer_side.dart';
 import 'loss_weigt_sport_calender.dart';
 
 class LossSportDay4 extends StatefulWidget {
@@ -38,7 +39,7 @@ class _LossSportDay4State extends State<LossSportDay4> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: DrawerSide(),
+      endDrawer: FemaleLossDrawer(),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -77,23 +78,24 @@ class _LossSportDay4State extends State<LossSportDay4> {
               height: 205,
               child: CircularCountDownTimer(
                 duration: duration,
-                initialDuration: 600,
+                initialDuration: 0,
                 controller:_controller,
                 width: MediaQuery.of(context).size.width / 1.6,
                 height: MediaQuery.of(context).size.height / 2,
-                ringColor: Colors.grey,
-                fillColor:   Color(0xffF4A02C),
+                ringColor: Color(0xffF4A02C),
+                fillColor:   Colors.grey,
                 strokeWidth: 15.0,
                 strokeCap: StrokeCap.round,
                 textStyle: TextStyle(
                     fontSize: 33.0, color: Colors.black, fontWeight: FontWeight.bold),
                 textFormat: CountdownTextFormat.MM_SS,
-                isReverse: true,
-                isReverseAnimation: false,
+                isReverse: false,
                 isTimerTextShown: true,
+                isReverseAnimation: false,
                 autoStart: false,
+
                 onStart: () {
-                  print('Countdown Started');
+
                 },
                 onComplete: () {
                   print('Countdown Ended');
@@ -121,18 +123,31 @@ class _LossSportDay4State extends State<LossSportDay4> {
                         )
                             : Icon(Icons.play_arrow, size: 25.0),
                         onPressed: () {
-                          onPressed ?_controller.pause() : _controller.restart();
                           setState(() {
-                            onPressed = !onPressed;
+                            if(onPressed){
+                              onPressed =false;
+                              _controller.pause();
+
+                            }else{
+                              onPressed=true;
+                              _controller.resume();
+                            }
+
                           });
                         }),
                   ),
-                  button(icon: Icons.stop, onPressed: ()=> _controller.pause())
+                  button(icon: Icons.stop, onPressed: (){
+                    _controller.restart();
+                    _controller.pause();
+                    setState(() {
+                      onPressed =false;
+                    });
+                  })
                 ],
               ),
             ),
             Container(
-              height: 384.2,
+              height: MediaQuery.of(context).size.height/2.1,
               width: MediaQuery.of(context).size.width,
               child: Stack(
                 children: [
@@ -141,13 +156,13 @@ class _LossSportDay4State extends State<LossSportDay4> {
                     child: ClipPath(
                       clipper: WaveClipperOne(reverse: true),
                       child: Container(
-                        height: 250,
+                        height: MediaQuery.of(context).size.width/1.5,
                         width: MediaQuery.of(context).size.width,
                         color: Color(0xffF4A02C),
                         child: Center(
                             child: Column(
                               children: const [
-                                SizedBox(height: 105,),
+                                SizedBox(height: 65,),
                                 Text("Lunges",
                                   style: TextStyle(
                                       fontSize: 22,

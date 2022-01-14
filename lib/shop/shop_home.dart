@@ -1,13 +1,9 @@
-import 'package:add_to_cart_animation/add_to_cart_animation.dart';
-import 'package:add_to_cart_animation/add_to_cart_icon.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:life_style_app/provider/cart_provider.dart';
-import 'package:life_style_app/provider/product_provider.dart';
-import 'package:life_style_app/screens/drawer_side.dart';
+import 'package:life_style_app/screens/drawers/m_g_drawer_side.dart';
 import 'package:life_style_app/shop/product_over_view.dart';
 import 'package:life_style_app/shop/review_star.dart';
-import 'package:provider/provider.dart';
 import 'package:woocommerce_api/woocommerce_api.dart';
 
 
@@ -19,7 +15,6 @@ class ShopHome extends StatefulWidget {
 
 class _ShopHomeState extends State<ShopHome> {
   int count = 0;
-
 
   Future _getProducts() async {
     // Initialize the API

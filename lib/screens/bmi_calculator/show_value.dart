@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:life_style_app/screens/bmi_calculator/bmi_home.dart';
 import 'package:life_style_app/screens/bmi_calculator/result.dart';
-import 'package:life_style_app/screens/drawer_side.dart';
+import 'package:life_style_app/screens/drawers/f_l_drawer.dart';
+import 'package:life_style_app/screens/drawers/m_g_drawer_side.dart';
 
 import 'custom_text.dart';
 
@@ -25,7 +26,7 @@ class _ShowValuesState extends State<ShowValues> {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       backgroundColor: Colors.white,
-      endDrawer: DrawerSide(),
+      endDrawer: FemaleLossDrawer(),
       body: SafeArea(
         child: Column(
           children: [

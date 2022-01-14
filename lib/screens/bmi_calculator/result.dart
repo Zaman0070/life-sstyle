@@ -1,7 +1,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:life_style_app/screens/drawer_side.dart';
+import 'package:life_style_app/screens/drawers/f_l_drawer.dart';
+import 'package:life_style_app/screens/drawers/m_g_drawer_side.dart';
 import 'package:life_style_app/screens/female/g_main_menu.dart';
 
 import 'box.dart';
@@ -33,7 +34,7 @@ class _ResulstState extends State<Resulst> {
     if (val <= 18.5) {
       setState(() {
         underweight = true;
-        buttonText = 'تحت الوزن';
+        buttonText = 'زيادة الوزن';
         textR =
         'أنت تعاني من نقص الوزن. ننصحك باتباع نظام غذائي وممارسة الرياضة. يمكنك اتباع نصيحتنا بشأن هذا في تطبيقنا في قسم زيادة الوزن. يرجى استشارة أخصائي التغذية قبل البدء في أي نظام غذائي أو برنامج تمارين.';
       });
@@ -49,7 +50,7 @@ class _ResulstState extends State<Resulst> {
       return normal;
     } else if (val > 25 && val <= 30) {
       setState(() {
-        buttonText = 'زيادة الوزن';
+        buttonText = 'تحت الوزن';
         overWeight = true;
         textR =
         'كنت بدينة. ننصحك باتباع نظام غذائي وممارسة الرياضة. يمكنك اتباع نصيحتنا بشأن هذا في تطبيقنا في قسم إنقاص الوزن. يرجى استشارة أخصائي التغذية قبل البدء في أي نظام غذائي أو برنامج تمارين.';
@@ -58,7 +59,7 @@ class _ResulstState extends State<Resulst> {
       return overWeight;
     } else if (val > 30 && val <= 35) {
       setState(() {
-        buttonText = 'زيادة الوزن';
+        buttonText = 'تحت الوزن';
         severlyOverweight = true;
         textR =
         'كنت تعاني من السمنة المفرطة. ننصحك باتباع نظام غذائي وممارسة الرياضة. يمكنك اتباع نصيحتنا بشأن هذا في تطبيقنا في قسم إنقاص الوزن. يرجى استشارة أخصائي التغذية قبل البدء في أي نظام غذائي أو برنامج تمارين.';
@@ -67,7 +68,7 @@ class _ResulstState extends State<Resulst> {
       return severlyOverweight;
     } else {
       setState(() {
-        buttonText = 'زيادة الوزن';
+        buttonText = 'تحت الوزن';
         verySeverlyOverweight = true;
         textR =
         'كنت تعاني من سمنة مفرطة. ننصحك باتباع نظام غذائي وممارسة الرياضة. يمكنك اتباع نصيحتنا بشأن هذا في تطبيقنا في قسم إنقاص الوزن. يرجى استشارة أخصائي التغذية قبل البدء في أي نظام غذائي أو برنامج تمارين.';
@@ -99,7 +100,7 @@ class _ResulstState extends State<Resulst> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      endDrawer: DrawerSide(),
+      endDrawer: FemaleLossDrawer(),
 
       body: SafeArea(
         child: Column(

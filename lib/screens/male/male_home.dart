@@ -43,7 +43,109 @@ class _MaleHomeScreenState extends State<MaleHomeScreen> {
                 textAlign: TextAlign.center,
                 style: TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeight.w500),
               ),
-              SizedBox(height: 82,),
+              SizedBox(height: 25,),
+              Directionality(
+                textDirection: TextDirection.rtl,
+                child: Container(
+
+                  height: MediaQuery.of(context).size.height/13,
+                  width: MediaQuery.of(context).size.width/1.2,
+                  margin: const EdgeInsets.all(5.0),
+                  padding: const EdgeInsets.all(3.0),
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Color(0xffF6A419),
+                      )),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Icon(
+                        Icons.watch_later_outlined,                    color: Colors.black,
+                        size: 45,
+                      ),
+
+                      const SizedBox(
+                        width: 15,
+                      ),
+                      Text(
+                        'العمر',
+                        style: const TextStyle(
+                            fontSize: 20,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
+              Directionality(
+                textDirection: TextDirection.rtl,
+                child: Container(
+                  height: MediaQuery.of(context).size.height/13,
+                  width: MediaQuery.of(context).size.width/1.2,
+                  margin: const EdgeInsets.all(5.0),
+                  padding: const EdgeInsets.all(3.0),
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Color(0xffF6A419),
+                      )),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Icon(
+                        Icons.thermostat,                 color: Colors.black,
+                        size: 45,
+                      ),
+
+                      const SizedBox(
+                        width: 15,
+                      ),
+                      Text(
+                        'الطول بالسنتمتر ',
+                        style: const TextStyle(
+                            fontSize: 20,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Directionality(
+                textDirection: TextDirection.rtl,
+                child: Container(
+                  height: MediaQuery.of(context).size.height/13,
+                  width: MediaQuery.of(context).size.width/1.2,
+                  margin: const EdgeInsets.all(5.0),
+                  padding: const EdgeInsets.all(3.0),
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Color(0xffF6A419),
+                      )),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Icon(
+                        Icons.monitor_weight_outlined,                  color: Colors.black,
+                        size: 45,
+                      ),
+
+                      const SizedBox(
+                        width: 15,
+                      ),
+                      Text(
+                        ' الوزن بالكيلوغرام ',
+                        style: const TextStyle(
+                            fontSize: 20,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 40,),
               InkWell(
                 onTap: (){
                 Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleMainMenu()));

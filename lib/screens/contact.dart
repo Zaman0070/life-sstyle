@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:life_style_app/shop/review_star.dart';
 import 'package:life_style_app/shop/shop_home.dart';
 
-import 'drawer_side.dart';
+import 'drawers/m_g_drawer_side.dart';
 import 'female/diet_plane.dart';
 
 class ContactUs extends StatefulWidget {

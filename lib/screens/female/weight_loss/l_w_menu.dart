@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:life_style_app/screens/drawers/f_l_drawer.dart';
 import 'package:life_style_app/screens/female/weight_loss/l_w_gernal_advice.dart';
 import 'package:life_style_app/screens/female/weight_loss/loss_weight_diet/l_w_calender.dart';
 import 'package:life_style_app/screens/female/weight_loss/loss_weight_sport/loss_weigt_sport_calender.dart';
 import 'package:life_style_app/shop/review_star.dart';
 import 'package:life_style_app/shop/shop_home.dart';
 
-import '../../drawer_side.dart';
+import '../../drawers/m_g_drawer_side.dart';
 import '../g_main_menu.dart';
 
 class LossWeightMenu extends StatefulWidget {
@@ -46,7 +47,7 @@ class _LossWeightMenuState extends State<LossWeightMenu> {
           ),
         ),
       ),
-      endDrawer: DrawerSide(),
+      endDrawer: FemaleLossDrawer(),
       body: SafeArea(
         child: Stack(
           children: [

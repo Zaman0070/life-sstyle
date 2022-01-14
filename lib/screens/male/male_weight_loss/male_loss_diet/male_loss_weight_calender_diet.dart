@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:life_style_app/screens/drawers/m_l_drawer.dart';
 import 'package:life_style_app/screens/male/male_weight_loss/mail_loss_menu.dart';
 import 'package:life_style_app/screens/male/male_weight_loss/male_loss_sport/male_loss_sport_calender.dart';
 
-import '../../../drawer_side.dart';
+import '../../../drawers/m_g_drawer_side.dart';
 import 'day1/male_loss_food_menu_day1.dart';
 import 'day2/male_loss_food_menu_day2.dart';
 import 'day3/male_loss_food_menu_day3.dart';
@@ -19,7 +20,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      endDrawer: DrawerSide(),
+      endDrawer: MaleLossDrawer(),
       body: SafeArea(
         child:Column(
           children: [
@@ -83,7 +84,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                 children: [
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay1()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay1(youm: 'اليوم الأول ')));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -104,7 +105,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay2(youm: 'اليوم الثاني',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -126,7 +127,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   InkWell(
                     onTap: ()
                     {
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay3()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay3(youm: 'اليوم الثالث',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -147,7 +148,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay1()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay1(youm: 'اليوم الرابع',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -168,7 +169,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay2(youm: 'اليوم الخامس',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -189,7 +190,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay3()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay3(youm: 'اليوم السادس',)));
 
                     },
                     child: Container(
@@ -211,7 +212,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay1()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay1(youm: 'اليوم السابع',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -232,7 +233,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay2(youm: 'اليوم الثامن',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -253,7 +254,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay3()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay3(youm: 'اليوم التاسع',)));
 
 
                     },
@@ -276,7 +277,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay1()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay1(youm: 'اليوم العاشر',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -297,7 +298,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay2(youm: 'اليوم الحادي عشر',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -318,7 +319,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay3()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay3(youm: 'اليوم الثاني عشر',)));
 
                     },
                     child: Container(
@@ -340,7 +341,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay1()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay1(youm: 'اليوم الثالث عشر',)));
 
                     },
                     child: Container(
@@ -362,7 +363,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay2(youm: 'اليوم الرابع عشر',)));
 
                     },
                     child: Container(
@@ -384,7 +385,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay3()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay3(youm: 'اليوم الخامس عشر',)));
 
 
                     },
@@ -407,7 +408,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay1()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay1(youm: 'اليوم السادس عشر',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -428,7 +429,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay2(youm: 'اليوم السابع عشر',)));
 
                     },
                     child: Container(
@@ -450,7 +451,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay3()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay3(youm: 'اليوم الثامن عشر',)));
 
                     },
                     child: Container(
@@ -472,7 +473,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay1()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay1(youm: 'اليوم التاسع عشر',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -493,7 +494,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay2(youm: 'اليوم العشرون',)));
 
                     },
                     child: Container(
@@ -515,7 +516,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay3()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay3(youm: 'اليوم الحادي والعشرون',)));
 
 
                     },
@@ -538,7 +539,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay1()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay1(youm: 'اليوم الثاني والعشرون',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -559,7 +560,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay2(youm: 'اليوم الثالث والعشرون',)));
 
                     },
                     child: Container(
@@ -581,7 +582,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay3()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay3(youm: 'اليوم الرابع والعشرون',)));
 
                     },
                     child: Container(
@@ -603,7 +604,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay1()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay1(youm: 'اليوم الخامس والعشرون',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -624,7 +625,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay2(youm: 'اليوم السادس والعشرون',)));
 
                     },
                     child: Container(
@@ -646,7 +647,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay3()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay3(youm: 'اليوم السابع والعشرون',)));
 
 
                     },
@@ -669,7 +670,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay1()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay1(youm: 'اليوم الثامن والعشرون',)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -690,7 +691,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay2()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay2(youm: 'اليوم التاسع والعشرون',)));
 
                     },
                     child: Container(
@@ -712,7 +713,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay3()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay3(youm: 'اليوم الثلاثين',)));
 
                     },
                     child: Container(
@@ -734,7 +735,7 @@ class _MaleLossWeightCalenderDietState extends State<MaleLossWeightCalenderDiet>
                   ),
                   InkWell(
                     onTap:  (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay1()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleLossFoodMenuDay1(youm: 'اليوم الواحد والثلاثون',)));
 
                     },
                     child: Container(

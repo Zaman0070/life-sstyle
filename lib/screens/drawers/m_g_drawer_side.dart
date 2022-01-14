@@ -4,6 +4,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:life_style_app/screens/contact.dart';
 import 'package:life_style_app/screens/home_screen.dart';
+import 'package:life_style_app/screens/male/male_weight_gain/male_diet/male_gain_calender.dart';
+import 'package:life_style_app/screens/male/male_weight_gain/male_gain_menu.dart';
+import 'package:life_style_app/screens/male/male_weight_gain/male_gernal_advice/male_general_advice.dart';
+import 'package:life_style_app/screens/male/male_weight_gain/male_sport/male_gain_sport_calender.dart';
+import 'package:life_style_app/screens/male/male_weight_loss/mail_loss_menu.dart';
 import 'package:life_style_app/service/phone_service.dart';
 import 'package:life_style_app/shop/shop_home.dart';
 
@@ -115,7 +120,12 @@ class _DrawerSideState extends State<DrawerSide> {
                           ),
                         ),
                         ListTile(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) => MaleWeightGainMenu()));
+                          },
                           leading: Image.asset(
                             'assets/icons/gain.png',
                             height: 35,
@@ -127,7 +137,12 @@ class _DrawerSideState extends State<DrawerSide> {
                           ),
                         ),
                         ListTile(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) => MaleWeightLossMenu()));
+                          },
                           leading: Image.asset(
                             'assets/icons/loss.png',
                             height: 35,
@@ -139,7 +154,12 @@ class _DrawerSideState extends State<DrawerSide> {
                           ),
                         ),
                         ListTile(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) => MaleGainCalenderDiet()));
+                          },
                           leading: Image.asset(
                             'assets/icons/diet.png',
                             height: 35,
@@ -151,7 +171,12 @@ class _DrawerSideState extends State<DrawerSide> {
                           ),
                         ),
                         ListTile(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) => MaleGainSportCalender()));
+                          },
                           leading: Image.asset(
                             'assets/icons/shoes.png',
                             height: 35,
@@ -163,7 +188,12 @@ class _DrawerSideState extends State<DrawerSide> {
                           ),
                         ),
                         ListTile(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) => Male_General_Advices()));
+                          },
                           leading: Image.asset(
                             'assets/icons/advice.png',
                             height: 35,
@@ -175,7 +205,12 @@ class _DrawerSideState extends State<DrawerSide> {
                           ),
                         ),
                         ListTile(
-                          onTap: () {},
+                          onTap: () {
+                            // Navigator.push(
+                            //     context,
+                            //     MaterialPageRoute(
+                            //         builder: (_) => MaleWeightGainMenu()));
+                          },
                           leading: Image.asset(
                             'assets/icons/settings.png',
                             height: 35,

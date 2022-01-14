@@ -1,15 +1,17 @@
 import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:life_style_app/screens/drawers/m_l_drawer.dart';
 import 'package:life_style_app/shop/review_star.dart';
 import 'package:life_style_app/shop/shop_home.dart';
 import 'package:share/share.dart';
 
-import '../../../../drawer_side.dart';
+import '../../../../drawers/m_g_drawer_side.dart';
 import 'male_loss_food_menu_day3.dart';
 
 class MaleLossLunchDay3 extends StatefulWidget {
-  const MaleLossLunchDay3({Key? key}) : super(key: key);
+  String youm;
+  MaleLossLunchDay3({required this.youm,Key? key}) : super(key: key);
 
   @override
   _MaleLossLunchDay3State createState() => _MaleLossLunchDay3State();
@@ -45,7 +47,7 @@ class _MaleLossLunchDay3State extends State<MaleLossLunchDay3> {
           ),
         ),
       ),
-      endDrawer: DrawerSide(),
+      endDrawer: MaleLossDrawer(),
       body: SafeArea(
         child: Column(
           children: [
@@ -64,9 +66,9 @@ class _MaleLossLunchDay3State extends State<MaleLossLunchDay3> {
                     },
                         icon: Icon(Icons.arrow_back_ios_new,color: Colors.white,)),
 
-                    // Center(child: Text('اليوم الأول',
-                    // style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
-                    // )),
+                    Center(child: Text(widget.youm,
+                    style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
+                    )),
                     Builder(
                       builder: (context){
                         return IconButton(onPressed: (){
@@ -112,7 +114,7 @@ class _MaleLossLunchDay3State extends State<MaleLossLunchDay3> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(height: 15,),
-                        Text('خبز التوست و البيض',
+                        Text('شطيرة الخضار',
                           style: TextStyle(fontWeight: FontWeight.w500,fontSize: 26,letterSpacing: 1.5),
                         ),
                         Row(

@@ -6,7 +6,7 @@ import 'package:life_style_app/screens/male/male_weight_gain/male_gernal_advice/
 import 'package:life_style_app/shop/review_star.dart';
 import 'package:life_style_app/shop/shop_home.dart';
 
-import '../../drawer_side.dart';
+import '../../drawers/m_g_drawer_side.dart';
 import 'male_sport/male_gain_sport_calender.dart';
 
 class MaleWeightGainMenu extends StatefulWidget {

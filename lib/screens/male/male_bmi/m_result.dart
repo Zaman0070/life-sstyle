@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:life_style_app/screens/bmi_calculator/box.dart';
 import 'package:life_style_app/screens/male/male_main_menu.dart';
 
-import '../../drawer_side.dart';
+import '../../drawers/m_g_drawer_side.dart';
 
 class MaleBmiResult extends StatefulWidget {
   final double result;

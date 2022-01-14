@@ -3,13 +3,15 @@ import 'package:life_style_app/screens/male/male_weight_gain/male_diet/male_gain
 import 'package:life_style_app/screens/male/male_weight_gain/male_diet/male_gain_day1/male_gain_bf_day1.dart';
 import 'package:life_style_app/screens/male/male_weight_gain/male_sport/male_gain_sport_calender.dart';
 
-import '../../../../drawer_side.dart';
+import '../../../../drawers/m_g_drawer_side.dart';
 import 'male_gain_diner_day1.dart';
 import 'male_gain_lunch_day1.dart';
 import 'male_gain_snake_day1.dart';
 
 class MaleGainFoodMenuDay1 extends StatefulWidget {
-  const MaleGainFoodMenuDay1({Key? key}) : super(key: key);
+  String youm;
+  MaleGainFoodMenuDay1({required this.youm,Key? key}) : super(key: key);
+
 
   @override
   _MaleGainFoodMenuDay1State createState() => _MaleGainFoodMenuDay1State();
@@ -76,7 +78,7 @@ class _MaleGainFoodMenuDay1State extends State<MaleGainFoodMenuDay1> {
                 children: [
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleGainLunchDay1()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleGainLunchDay1(youm: widget.youm,)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -93,7 +95,7 @@ class _MaleGainFoodMenuDay1State extends State<MaleGainFoodMenuDay1> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleGainBFDay1()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleGainBFDay1(youm: widget.youm,)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -111,7 +113,7 @@ class _MaleGainFoodMenuDay1State extends State<MaleGainFoodMenuDay1> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MailGainDinerDay1()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MailGainDinerDay1(youm: widget.youm,)));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -128,7 +130,7 @@ class _MaleGainFoodMenuDay1State extends State<MaleGainFoodMenuDay1> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleGainSnakeDay1()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=>MaleGainSnakeDay1(youm: widget.youm,)));
                     },
                     child: Container(
                       decoration: BoxDecoration(

@@ -11,7 +11,7 @@ import 'package:life_style_app/screens/female/weight_loss/loss_weight_sport/loss
 import 'package:life_style_app/screens/female/weight_loss/loss_weight_sport/loss_sport_day8.dart';
 import 'package:life_style_app/screens/female/weight_loss/loss_weight_sport/loss_sport_day9.dart';
 
-import '../../../drawer_side.dart';
+import '../../../drawers/m_g_drawer_side.dart';
 import '../l_w_menu.dart';
 import 'loss_sport_day10.dart';
 

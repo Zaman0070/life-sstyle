@@ -1,8 +1,9 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
+import 'package:life_style_app/screens/drawers/m_l_drawer.dart';
 
-import '../../../../drawer_side.dart';
+import '../../../../drawers/m_g_drawer_side.dart';
 import '../male_loss_sport_calender.dart';
 
 class MaleLossDay9 extends StatefulWidget {
@@ -36,7 +37,7 @@ class _MaleLossDay9State extends State<MaleLossDay9> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: DrawerSide(),
+      endDrawer: MaleLossDrawer(),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -75,23 +76,24 @@ class _MaleLossDay9State extends State<MaleLossDay9> {
               height: 205,
               child: CircularCountDownTimer(
                 duration: duration,
-                initialDuration: 600,
+                initialDuration: 0,
                 controller:_controller,
                 width: MediaQuery.of(context).size.width / 1.6,
                 height: MediaQuery.of(context).size.height / 2,
-                ringColor: Colors.grey,
-                fillColor:   Color(0xffF4A02C),
+                ringColor: Color(0xffF4A02C),
+                fillColor:   Colors.grey,
                 strokeWidth: 15.0,
                 strokeCap: StrokeCap.round,
                 textStyle: TextStyle(
                     fontSize: 33.0, color: Colors.black, fontWeight: FontWeight.bold),
                 textFormat: CountdownTextFormat.MM_SS,
-                isReverse: true,
-                isReverseAnimation: false,
+                isReverse: false,
                 isTimerTextShown: true,
+                isReverseAnimation: false,
                 autoStart: false,
+
                 onStart: () {
-                  print('Countdown Started');
+
                 },
                 onComplete: () {
                   print('Countdown Ended');
@@ -119,18 +121,31 @@ class _MaleLossDay9State extends State<MaleLossDay9> {
                         )
                             : Icon(Icons.play_arrow, size: 25.0),
                         onPressed: () {
-                          onPressed ?_controller.pause() : _controller.restart();
                           setState(() {
-                            onPressed = !onPressed;
+                            if(onPressed){
+                              onPressed =false;
+                              _controller.pause();
+
+                            }else{
+                              onPressed=true;
+                              _controller.resume();
+                            }
+
                           });
                         }),
                   ),
-                  button(icon: Icons.stop, onPressed: ()=> _controller.pause())
+                  button(icon: Icons.stop, onPressed: (){
+                    _controller.restart();
+                    _controller.pause();
+                    setState(() {
+                      onPressed =false;
+                    });
+                  })
                 ],
               ),
             ),
             Container(
-              height: 384.2,
+              height: MediaQuery.of(context).size.height/2.1,
               width: MediaQuery.of(context).size.width,
               child: Stack(
                 children: [
@@ -139,13 +154,13 @@ class _MaleLossDay9State extends State<MaleLossDay9> {
                     child: ClipPath(
                       clipper: WaveClipperOne(reverse: true),
                       child: Container(
-                        height: 250,
+                        height: MediaQuery.of(context).size.width/1.5,
                         width: MediaQuery.of(context).size.width,
                         color: Color(0xffF4A02C),
                         child: Center(
                             child: Column(
                               children: const [
-                                SizedBox(height: 105,),
+                                SizedBox(height: 80,),
                                 Text("Push-Up",
                                   style: TextStyle(
                                       fontSize: 22,
@@ -155,7 +170,7 @@ class _MaleLossDay9State extends State<MaleLossDay9> {
                                   textDirection: TextDirection.rtl,
                                   child: Padding(
                                     padding: EdgeInsets.only(left: 20.0,right: 20),
-                                    child: Text("تمرين الضغط هو تمرين رياضي شائع يبدأ من وضعية الانبطاح. عن طريق رفع الجسم وخفضه باستخدام الذراعين",
+                                    child: Text("تمرين الضغط هو تمرين رياضي  يبدأ من وضعية الانبطاح. الجسم وخفضه باستخدام الذراعين",
                                       style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.bold
@@ -171,8 +186,8 @@ class _MaleLossDay9State extends State<MaleLossDay9> {
                   ),
                   Positioned(
                       top: 0,
-                      left: 90,
-                      child: Image.asset('assets/male_loss/m9.png',height: 240,)),
+                      left: 100,
+                      child: Image.asset('assets/male_loss/m9.png',height: 220,)),
                 ],
               ),
             ),

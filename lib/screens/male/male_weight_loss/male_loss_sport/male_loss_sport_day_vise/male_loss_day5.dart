@@ -1,8 +1,9 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
+import 'package:life_style_app/screens/drawers/m_l_drawer.dart';
 
-import '../../../../drawer_side.dart';
+import '../../../../drawers/m_g_drawer_side.dart';
 import '../male_loss_sport_calender.dart';
 
 class MaleLossDay5 extends StatefulWidget {
@@ -38,7 +39,7 @@ class _MaleLossDay5State extends State<MaleLossDay5> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: DrawerSide(),
+      endDrawer: MaleLossDrawer(),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -77,23 +78,24 @@ class _MaleLossDay5State extends State<MaleLossDay5> {
               height: 205,
               child: CircularCountDownTimer(
                 duration: duration,
-                initialDuration: 600,
+                initialDuration: 0,
                 controller:_controller,
                 width: MediaQuery.of(context).size.width / 1.6,
                 height: MediaQuery.of(context).size.height / 2,
-                ringColor: Colors.grey,
-                fillColor:   Color(0xffF4A02C),
+                ringColor: Color(0xffF4A02C),
+                fillColor:   Colors.grey,
                 strokeWidth: 15.0,
                 strokeCap: StrokeCap.round,
                 textStyle: TextStyle(
                     fontSize: 33.0, color: Colors.black, fontWeight: FontWeight.bold),
                 textFormat: CountdownTextFormat.MM_SS,
-                isReverse: true,
-                isReverseAnimation: false,
+                isReverse: false,
                 isTimerTextShown: true,
+                isReverseAnimation: false,
                 autoStart: false,
+
                 onStart: () {
-                  print('Countdown Started');
+
                 },
                 onComplete: () {
                   print('Countdown Ended');
@@ -121,13 +123,26 @@ class _MaleLossDay5State extends State<MaleLossDay5> {
                         )
                             : Icon(Icons.play_arrow, size: 25.0),
                         onPressed: () {
-                          onPressed ?_controller.pause() : _controller.restart();
                           setState(() {
-                            onPressed = !onPressed;
+                            if(onPressed){
+                              onPressed =false;
+                              _controller.pause();
+
+                            }else{
+                              onPressed=true;
+                              _controller.resume();
+                            }
+
                           });
                         }),
                   ),
-                  button(icon: Icons.stop, onPressed: ()=> _controller.pause())
+                  button(icon: Icons.stop, onPressed: (){
+                    _controller.restart();
+                    _controller.pause();
+                    setState(() {
+                      onPressed =false;
+                    });
+                  })
                 ],
               ),
             ),
@@ -147,7 +162,7 @@ class _MaleLossDay5State extends State<MaleLossDay5> {
                         child: Center(
                             child: Column(
                               children: const [
-                                SizedBox(height: 105,),
+                                SizedBox(height: 80,),
                                 Text("Arms Warm Up",
                                   style: TextStyle(
                                       fontSize: 22,
@@ -157,7 +172,7 @@ class _MaleLossDay5State extends State<MaleLossDay5> {
                                   textDirection: TextDirection.rtl,
                                   child: Padding(
                                     padding: EdgeInsets.only(left: 20.0,right: 20),
-                                    child: Text("حافظ على استقامة ذراعيك وقم بتدويرهما في دوائر للخلف. بعد 20 إلى 30 ثانية ، قم بتدوير ذراعيك في دوائر للأمام بعد 20 إلى 30 ثانية",
+                                    child: Text("حافظ على استقامة ذراعيك وقم بتدويرهما في دوائر للخلف. بعد 20 إلى 30 ثانية ",
                                       style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.bold
@@ -173,8 +188,8 @@ class _MaleLossDay5State extends State<MaleLossDay5> {
                   ),
                   Positioned(
                       top: 0,
-                      left: 80,
-                      child: Image.asset('assets/male_loss/m5.png',height: 240,)),
+                      left: 100,
+                      child: Image.asset('assets/male_loss/m5.png',height: 220,)),
                 ],
               ),
             ),

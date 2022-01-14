@@ -3,7 +3,7 @@ import 'package:life_style_app/screens/bmi_calculator/field_text.dart';
 import 'package:life_style_app/screens/male/male_bmi/m_bmi_show_value.dart';
 import 'package:life_style_app/screens/male/male_home.dart';
 
-import '../../drawer_side.dart';
+import '../../drawers/m_g_drawer_side.dart';
 
 class MaleBmiHome extends StatefulWidget {
   const MaleBmiHome({Key? key}) : super(key: key);

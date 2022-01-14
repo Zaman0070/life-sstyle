@@ -3,7 +3,7 @@ import 'package:life_style_app/screens/male/male_weight_gain/male_diet/male_gain
 import 'package:life_style_app/screens/male/male_weight_gain/male_sport/male_sport_day_vise/male_sport_day2.dart';
 import 'package:life_style_app/screens/male/male_weight_gain/male_sport/male_sport_day_vise/male_sport_day3.dart';
 
-import '../../../drawer_side.dart';
+import '../../../drawers/m_g_drawer_side.dart';
 import '../male_gain_menu.dart';
 import 'male_sport_day_vise/male_sport_day1.dart';
 

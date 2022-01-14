@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:life_style_app/screens/drawers/m_l_drawer.dart';
 import 'package:life_style_app/screens/female/weight_loss/l_w_gernal_advice.dart';
 import 'package:life_style_app/shop/review_star.dart';
 import 'package:life_style_app/shop/shop_home.dart';
 
-import '../../drawer_side.dart';
+import '../../drawers/m_g_drawer_side.dart';
 import '../male_main_menu.dart';
 import 'male_loss_diet/male_loss_weight_calender_diet.dart';
 import 'male_loss_sport/male_loss_sport_calender.dart';
@@ -45,7 +46,7 @@ class _MaleWeightLossMenuState extends State<MaleWeightLossMenu> {
           ),
         ),
       ),
-      endDrawer: DrawerSide(),
+      endDrawer: MaleLossDrawer(),
       body: SafeArea(
         child: Stack(
           children: [

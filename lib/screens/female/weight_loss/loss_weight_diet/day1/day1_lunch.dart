@@ -1,16 +1,17 @@
 import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:life_style_app/screens/drawers/f_l_drawer.dart';
 import 'package:life_style_app/shop/review_star.dart';
 import 'package:life_style_app/shop/shop_home.dart';
 import 'package:share/share.dart';
 
-import '../../../../drawer_side.dart';
+import '../../../../drawers/m_g_drawer_side.dart';
 import 'menuday1.dart';
 
 class LossLunchDay1 extends StatefulWidget {
-  const LossLunchDay1({Key? key}) : super(key: key);
-
+  String youm;
+  LossLunchDay1({required this.youm,Key? key}) : super(key: key);
   @override
   _LossLunchDay1State createState() => _LossLunchDay1State();
 }
@@ -45,7 +46,7 @@ class _LossLunchDay1State extends State<LossLunchDay1> {
           ),
         ),
       ),
-      endDrawer: DrawerSide(),
+      endDrawer: FemaleLossDrawer(),
       body: SafeArea(
         child: Column(
           children: [
@@ -64,9 +65,9 @@ class _LossLunchDay1State extends State<LossLunchDay1> {
                     },
                         icon: Icon(Icons.arrow_back_ios_new,color: Colors.white,)),
 
-                    // Center(child: Text('اليوم الأول',
-                    // style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
-                    // )),
+                    Center(child: Text(widget.youm,
+                    style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
+                    )),
                     Builder(
                       builder: (context){
                         return IconButton(onPressed: (){
@@ -112,7 +113,7 @@ class _LossLunchDay1State extends State<LossLunchDay1> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(height: 15,),
-                        Text('خبز التوست و البيض',
+                        Text('الخضار مع المعكرونة',
                           style: TextStyle(fontWeight: FontWeight.w500,fontSize: 26,letterSpacing: 1.5),
                         ),
                         Row(

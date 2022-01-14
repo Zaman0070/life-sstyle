@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:life_style_app/screens/drawer_side.dart';
+import 'package:life_style_app/screens/drawers/f_g_drawer.dart';
+import 'package:life_style_app/screens/drawers/m_g_drawer_side.dart';
 import 'package:life_style_app/screens/female/f_diet.dart';
 import 'package:life_style_app/screens/female/f_general_advices.dart';
 import 'package:life_style_app/screens/female/f_sport.dart';
@@ -50,7 +51,7 @@ class _DietPlaneState extends State<DietPlane> {
           ),
         ),
       ),
-      endDrawer: DrawerSide(),
+      endDrawer: FemaleGainDrawer(),
       body: SafeArea(
         child: Stack(
           children: [

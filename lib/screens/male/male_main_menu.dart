@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:life_style_app/screens/drawers/m_l_drawer.dart';
 import 'package:life_style_app/screens/male/male_home.dart';
 import 'package:life_style_app/screens/male/male_weight_gain/male_gain_menu.dart';
 import 'package:life_style_app/screens/male/male_weight_loss/mail_loss_menu.dart';
 
-import '../drawer_side.dart';
+import '../drawers/m_g_drawer_side.dart';
 
 class MaleMainMenu extends StatefulWidget {
   const MaleMainMenu({Key? key}) : super(key: key);
@@ -16,9 +17,9 @@ class _MaleMainMenuState extends State<MaleMainMenu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: MaleLossDrawer(),
       backgroundColor: Colors.white,
       drawerScrimColor: Colors.transparent,
-      endDrawer: DrawerSide(),
       body: SafeArea(
         child: Column(
           children: [
@@ -41,13 +42,11 @@ class _MaleMainMenuState extends State<MaleMainMenu> {
                         icon: Icon(
                           Icons.arrow_back_ios_new, color: Colors.white,)),
                     Builder(
-                      builder: (context) {
-                        return IconButton(onPressed: () {
+                      builder: (context){
+                        return IconButton(onPressed: (){
                           Scaffold.of(context).openEndDrawer();
                         },
-                            icon: Image.asset(
-                              'assets/icons/menu.png', fit: BoxFit.cover,
-                              color: Colors.white,)
+                            icon: Image.asset('assets/icons/menu.png',fit: BoxFit.cover,color: Colors.white,)
                         );
                       },
                     )

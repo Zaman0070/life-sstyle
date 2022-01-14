@@ -2,14 +2,16 @@ import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:life_style_app/screens/drawer_side.dart';
+import 'package:life_style_app/screens/drawers/f_g_drawer.dart';
+import 'package:life_style_app/screens/drawers/m_g_drawer_side.dart';
 import 'package:life_style_app/screens/female/female_diet_day_vise/f_day1/f_food1.dart';
 import 'package:life_style_app/shop/review_star.dart';
 import 'package:life_style_app/shop/shop_home.dart';
 import 'package:share/share.dart';
 
 class BreakFastday1 extends StatefulWidget {
-  const BreakFastday1({Key? key}) : super(key: key);
+  String youm;
+  BreakFastday1({required this.youm,Key? key}) : super(key: key);
 
   @override
   _BreakFastday1State createState() => _BreakFastday1State();
@@ -45,7 +47,7 @@ class _BreakFastday1State extends State<BreakFastday1> {
           ),
         ),
       ),
-      endDrawer: DrawerSide(),
+      endDrawer: FemaleGainDrawer(),
       body: SafeArea(
           child: Column(
             children: [
@@ -64,9 +66,9 @@ class _BreakFastday1State extends State<BreakFastday1> {
                       },
                           icon: Icon(Icons.arrow_back_ios_new,color: Colors.white,)),
 
-                      // Center(child: Text('اليوم الأول',
-                      // style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
-                      // )),
+                      Center(child: Text(widget.youm,
+                      style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
+                      )),
                       Builder(
                         builder: (context){
                           return IconButton(onPressed: (){
@@ -112,8 +114,8 @@ class _BreakFastday1State extends State<BreakFastday1> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SizedBox(height: 15,),
-                          Text('خبز التوست و البيض',
-                            style: TextStyle(fontWeight: FontWeight.w500,fontSize: 26,letterSpacing: 1.5),
+                          Text('خبز بالعسل والبرتقال',
+                            style: TextStyle(fontWeight: FontWeight.w500,fontSize: 24,letterSpacing: 1.5),
                           ),
                           Row(
                             children: [
