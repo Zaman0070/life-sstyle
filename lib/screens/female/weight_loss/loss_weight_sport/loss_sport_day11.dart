@@ -5,6 +5,7 @@ import 'package:life_style_app/screens/drawers/f_l_drawer.dart';
 
 import '../../../drawers/m_g_drawer_side.dart';
 import 'loss_weigt_sport_calender.dart';
+import 'package:sizer/sizer.dart';
 
 class LossSportDay11 extends StatefulWidget {
   const LossSportDay11({Key? key}) : super(key: key);
@@ -160,7 +161,7 @@ class _LossSportDay11State extends State<LossSportDay11> {
                         child: Center(
                             child: Column(
                               children: const [
-                                SizedBox(height: 75,),
+                                SizedBox(height: 65,),
                                 Text("Knee Stretches",
                                   style: TextStyle(
                                       fontSize: 22,
@@ -187,7 +188,7 @@ class _LossSportDay11State extends State<LossSportDay11> {
                   Positioned(
                       top: 0,
                       left: 100,
-                      child: Image.asset('assets/loss_sp/loss14.png',height: 230,)),
+                      child: Image.asset('assets/loss_sp/loss14.png',height: 26.h,)),
                 ],
               ),
             ),

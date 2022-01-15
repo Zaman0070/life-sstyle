@@ -5,6 +5,7 @@ import 'package:life_style_app/screens/drawers/f_l_drawer.dart';
 
 import '../../../drawers/m_g_drawer_side.dart';
 import 'loss_weigt_sport_calender.dart';
+import 'package:sizer/sizer.dart';
 
 class LossSportDay5 extends StatefulWidget {
   const LossSportDay5({Key? key}) : super(key: key);
@@ -161,7 +162,7 @@ class _LossSportDay5State extends State<LossSportDay5> {
                         child: Center(
                             child: Column(
                               children: const [
-                                SizedBox(height: 75,),
+                                SizedBox(height: 65,),
                                 Text("Arms Warm Up",
                                   style: TextStyle(
                                       fontSize: 22,
@@ -188,7 +189,7 @@ class _LossSportDay5State extends State<LossSportDay5> {
                   Positioned(
                       top: 0,
                       left: 105,
-                      child: Image.asset('assets/loss_sp/loss6.png',height: 220,)),
+                      child: Image.asset('assets/loss_sp/loss6.png',height: 25.h,)),
                 ],
               ),
             ),

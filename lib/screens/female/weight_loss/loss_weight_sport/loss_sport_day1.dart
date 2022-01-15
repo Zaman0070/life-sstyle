@@ -5,6 +5,7 @@ import 'package:life_style_app/screens/drawers/f_l_drawer.dart';
 import 'package:life_style_app/screens/female/weight_loss/loss_weight_sport/loss_weigt_sport_calender.dart';
 
 import '../../../drawers/m_g_drawer_side.dart';
+import 'package:sizer/sizer.dart';
 
 class LossSPortDay1 extends StatefulWidget {
   const LossSPortDay1({Key? key}) : super(key: key);
@@ -162,7 +163,7 @@ class _LossSPortDay1State extends State<LossSPortDay1> {
                         child: Center(
                             child: Column(
                               children: const [
-                                SizedBox(height: 85,),
+                                SizedBox(height: 75,),
                                 Text("Donkey kicks",
                                   style: TextStyle(
                                       fontSize: 22,
@@ -189,7 +190,7 @@ class _LossSPortDay1State extends State<LossSPortDay1> {
                   Positioned(
                       top: 0,
                       left: 80,
-                      child: Image.asset('assets/loss_sp/loss2.png',height: 240,)),
+                      child: Image.asset('assets/loss_sp/loss2.png',height: 27.h,)),
                 ],
               ),
             ),

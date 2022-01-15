@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 
 import '../../../../drawers/m_g_drawer_side.dart';
+import 'package:sizer/sizer.dart';
 import '../male_gain_sport_calender.dart';
 
 class MaleGainSportDay2 extends StatefulWidget {
@@ -188,7 +189,7 @@ class _MaleGainSportDay2State extends State<MaleGainSportDay2> {
                   Positioned(
                       top: 0,
                       left: 100,
-                      child: Image.asset('assets/male/mgain1.png',height: 240,)),
+                      child: Image.asset('assets/male/mgain1.png',height: 25.h,)),
                 ],
               ),
             ),

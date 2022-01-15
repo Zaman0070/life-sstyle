@@ -4,6 +4,7 @@ import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:life_style_app/screens/male/male_weight_gain/male_sport/male_gain_sport_calender.dart';
 
 import '../../../../drawers/m_g_drawer_side.dart';
+import 'package:sizer/sizer.dart';
 
 class MaleGainSportDay3 extends StatefulWidget {
   const MaleGainSportDay3({Key? key}) : super(key: key);
@@ -161,7 +162,7 @@ class _MaleGainSportDay3State extends State<MaleGainSportDay3> {
                         child: Center(
                             child: Column(
                               children: const [
-                                SizedBox(height: 75,),
+                                SizedBox(height: 60,),
                                 Text("LUNGE",
                                   style: TextStyle(
                                       fontSize: 22,
@@ -188,7 +189,7 @@ class _MaleGainSportDay3State extends State<MaleGainSportDay3> {
                   Positioned(
                       top: 0,
                       left: 90,
-                      child: Image.asset('assets/male/mgain2.png',height: 230,)),
+                      child: Image.asset('assets/male/mgain2.png',height: 25.h,)),
                 ],
               ),
             ),

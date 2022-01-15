@@ -4,6 +4,7 @@ import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:life_style_app/screens/drawers/m_l_drawer.dart';
 
 import '../../../../drawers/m_g_drawer_side.dart';
+import 'package:sizer/sizer.dart';
 import '../male_loss_sport_calender.dart';
 
 class MaleLossDay6 extends StatefulWidget {
@@ -161,7 +162,7 @@ class _MaleLossDay6State extends State<MaleLossDay6> {
                         child: Center(
                             child: Column(
                               children: const [
-                                SizedBox(height: 70,),
+                                SizedBox(height: 65,),
                                 Text("Postural Exercise",
                                   style: TextStyle(
                                       fontSize: 22,
@@ -188,7 +189,7 @@ class _MaleLossDay6State extends State<MaleLossDay6> {
                   Positioned(
                       top: 0,
                       left: 80,
-                      child: Image.asset('assets/male_loss/m6.png',height: 240,)),
+                      child: Image.asset('assets/male_loss/m6.png',height: 27.h,)),
                 ],
               ),
             ),

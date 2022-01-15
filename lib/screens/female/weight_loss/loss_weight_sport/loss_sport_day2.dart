@@ -5,6 +5,7 @@ import 'package:life_style_app/screens/drawers/f_l_drawer.dart';
 
 import '../../../drawers/m_g_drawer_side.dart';
 import 'loss_weigt_sport_calender.dart';
+import 'package:sizer/sizer.dart';
 
 class LossSportDay2 extends StatefulWidget {
   const LossSportDay2({Key? key}) : super(key: key);
@@ -161,7 +162,7 @@ class _LossSportDay2State extends State<LossSportDay2> {
                         child: Center(
                             child: Column(
                               children: const [
-                                SizedBox(height: 85,),
+                                SizedBox(height: 70,),
                                 Text("Half Squats",
                                   style: TextStyle(
                                       fontSize: 22,
@@ -188,7 +189,7 @@ class _LossSportDay2State extends State<LossSportDay2> {
                   Positioned(
                       top: 0,
                       left: 120,
-                      child: Image.asset('assets/loss_sp/loss3.png',height: 220,)),
+                      child: Image.asset('assets/loss_sp/loss3.png',height: 25.h,)),
                 ],
               ),
             ),

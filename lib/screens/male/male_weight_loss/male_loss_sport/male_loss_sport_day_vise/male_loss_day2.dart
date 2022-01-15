@@ -5,6 +5,7 @@ import 'package:life_style_app/screens/drawers/m_l_drawer.dart';
 
 import '../../../../drawers/m_g_drawer_side.dart';
 import '../male_loss_sport_calender.dart';
+import 'package:sizer/sizer.dart';
 
 class MaleLossDay2 extends StatefulWidget {
   const MaleLossDay2({Key? key}) : super(key: key);
@@ -160,7 +161,7 @@ class _MaleLossDay2State extends State<MaleLossDay2> {
                         child: Center(
                             child: Column(
                               children: const [
-                                SizedBox(height: 85,),
+                                SizedBox(height: 70,),
                                 Text("Leg Raise",
                                   style: TextStyle(
                                       fontSize: 22,

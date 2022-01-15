@@ -5,6 +5,7 @@ import 'package:life_style_app/screens/drawers/f_g_drawer.dart';
 
 import '../../drawers/m_g_drawer_side.dart';
 import '../f_sport.dart';
+import 'package:sizer/sizer.dart';
 
 class FExDay2 extends StatefulWidget {
   const FExDay2({Key? key}) : super(key: key);
@@ -191,7 +192,7 @@ class _FExDay2State extends State<FExDay2> {
                   Positioned(
                       top: 0,
                       left: 115,
-                      child: Image.asset('assets/fgain1.png',height: 240,)),
+                      child: Image.asset('assets/fgain1.png',height: 26.h,)),
                 ],
               ),
             ),

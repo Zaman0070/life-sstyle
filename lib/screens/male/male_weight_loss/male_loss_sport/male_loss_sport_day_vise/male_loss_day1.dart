@@ -2,6 +2,7 @@ import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:life_style_app/screens/drawers/m_l_drawer.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../../../drawers/m_g_drawer_side.dart';
 import '../male_loss_sport_calender.dart';
@@ -162,7 +163,7 @@ class _MaleLossSportDay1State extends State<MaleLossSportDay1> {
                         child: Center(
                             child: Column(
                               children: const [
-                                SizedBox(height: 85,),
+                                SizedBox(height: 70,),
                                 Text("Donkey kicks",
                                   style: TextStyle(
                                       fontSize: 22,
@@ -189,7 +190,7 @@ class _MaleLossSportDay1State extends State<MaleLossSportDay1> {
                   Positioned(
                       top: 0,
                       left: 80,
-                      child: Image.asset('assets/male_loss/m1.png',height: 240,)),
+                      child: Image.asset('assets/male_loss/m1.png',height: 27.h,)),
                 ],
               ),
             ),

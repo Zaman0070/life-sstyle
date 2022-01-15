@@ -5,6 +5,7 @@ import 'package:life_style_app/screens/drawers/f_l_drawer.dart';
 
 import '../../../drawers/m_g_drawer_side.dart';
 import 'loss_weigt_sport_calender.dart';
+import 'package:sizer/sizer.dart';
 
 class LossSportDay9 extends StatefulWidget {
   const LossSportDay9({Key? key}) : super(key: key);
@@ -160,7 +161,7 @@ class _LossSportDay9State extends State<LossSportDay9> {
                         child: Center(
                             child: Column(
                               children: const [
-                                SizedBox(height: 75,),
+                                SizedBox(height: 70,),
                                 Text("Reverse Superman",
                                   style: TextStyle(
                                       fontSize: 22,
@@ -187,7 +188,7 @@ class _LossSportDay9State extends State<LossSportDay9> {
                   Positioned(
                       top: 20,
                       left: 90,
-                      child: Image.asset('assets/loss_sp/loss12.png',height: 240,)),
+                      child: Image.asset('assets/loss_sp/loss12.png',height: 26.h,)),
                 ],
               ),
             ),

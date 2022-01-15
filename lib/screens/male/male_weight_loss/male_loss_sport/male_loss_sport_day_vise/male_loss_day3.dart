@@ -5,6 +5,7 @@ import 'package:life_style_app/screens/drawers/m_l_drawer.dart';
 
 import '../../../../drawers/m_g_drawer_side.dart';
 import '../male_loss_sport_calender.dart';
+import 'package:sizer/sizer.dart';
 
 class MaleLossDay3 extends StatefulWidget {
   const MaleLossDay3({Key? key}) : super(key: key);
@@ -161,7 +162,7 @@ class _MaleLossDay3State extends State<MaleLossDay3> {
                         child: Center(
                             child: Column(
                               children: const [
-                                SizedBox(height: 65,),
+                                SizedBox(height: 60,),
                                 Text("Correcting posture",
                                   style: TextStyle(
                                       fontSize: 22,

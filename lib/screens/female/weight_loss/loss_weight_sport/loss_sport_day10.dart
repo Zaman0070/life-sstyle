@@ -5,6 +5,7 @@ import 'package:life_style_app/screens/drawers/f_l_drawer.dart';
 
 import '../../../drawers/m_g_drawer_side.dart';
 import 'loss_weigt_sport_calender.dart';
+import 'package:sizer/sizer.dart';
 
 class LossSportDay10 extends StatefulWidget {
   const LossSportDay10({Key? key}) : super(key: key);
@@ -160,7 +161,7 @@ class _LossSportDay10State extends State<LossSportDay10> {
                         child: Center(
                             child: Column(
                               children: const [
-                                SizedBox(height: 75,),
+                                SizedBox(height: 65,),
                                 Text("Cow Pose",
                                   style: TextStyle(
                                       fontSize: 22,
@@ -187,7 +188,7 @@ class _LossSportDay10State extends State<LossSportDay10> {
                   Positioned(
                       top: 0,
                       left: 90,
-                      child: Image.asset('assets/loss_sp/loss13.png',height: 240,)),
+                      child: Image.asset('assets/loss_sp/loss13.png',height: 26.h,)),
                 ],
               ),
             ),

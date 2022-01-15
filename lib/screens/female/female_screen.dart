@@ -151,7 +151,7 @@ class FemaleScreen extends StatelessWidget {
                   width: 200,
                   color: Color(0xfffbbe28),
                   child: Center(
-                    child: Text(' القائمة البئيسية   <',
+                    child: Text(' القائمة الرئيسية   <',
                       style: TextStyle(
                         fontSize: 19,
                         fontWeight: FontWeight.w500,
@@ -172,7 +172,7 @@ class FemaleScreen extends StatelessWidget {
                 width: 200,
                 color: Color(0xfffbbe28),
                 child: Center(
-                  child: Text('   حاسيبه موشر الكتلة   <',
+                  child: Text('  حاسبة مؤشر كتلة   <',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w500,

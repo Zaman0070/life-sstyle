@@ -1,8 +1,9 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:life_style_app/shop/review_star.dart';
 import 'package:life_style_app/shop/shop_home.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:sizer/sizer.dart';
 
 import 'drawers/m_g_drawer_side.dart';
 import 'female/diet_plane.dart';
@@ -15,14 +16,44 @@ class ContactUs extends StatefulWidget {
 }
 
 class _ContactUsState extends State<ContactUs> {
-  _launchURL(String toMailId, String subject, String body) async {
-    var url = 'mailto:$toMailId?subject=$subject&body=$body';
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
+
+  List<String> attachments = [];
+  bool isHTML = false;
+
+  final _recipientController = TextEditingController(text: 'nutrianainsta@gmail.com',);
+
+  final _subjectController = TextEditingController();
+
+  final _bodyController = TextEditingController();
+
+  Future<void> send() async {
+    final Email email = Email(
+      body: _bodyController.text,
+      subject: _subjectController.text,
+      recipients: [_recipientController.text],
+      attachmentPaths: attachments,
+      isHTML: isHTML,
+    );
+
+    String platformResponse;
+
+    try {
+      await FlutterEmailSender.send(email);
+      platformResponse = 'success';
+    } catch (error) {
+      platformResponse = error.toString();
     }
+
+    if (!mounted) return;
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(platformResponse),
+      ),
+    );
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -57,8 +88,6 @@ class _ContactUsState extends State<ContactUs> {
       endDrawer: DrawerSide(),
       body: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-
           children: [
             Container(
               height: 80,
@@ -87,41 +116,40 @@ class _ContactUsState extends State<ContactUs> {
               ),
             ),
             Container(
-                height: 60,
-                width: 230,
+                height: 6.h,
+                width: 60.w,
                 color: Color(0xffFDB640),
                 child: Center(
                     child: Text(
                       'الاتصال بنا',
                       style: TextStyle(
                           fontWeight: FontWeight.w500,
-                          fontSize: 34,
+                          fontSize: 30,
                           letterSpacing: 3),
                     ))),
             Container(
-                height: 100,
-                width: 200,
+                height: 8.h,
+                width: 60.w,
                 child: Directionality(
                     textDirection: TextDirection.rtl,
                     child: Text(
                       'سنسعد بالتواصل معكم و التوصل باقتراحاتكم و انتقاذاتكم',
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                      style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w500),
                     ))),
+
             Container(
-              height: 310,
-              width: 295,
+              height: 40.h,
+              width: 85.w,
 
               child: Directionality(
                 textDirection: TextDirection.rtl,
                 child: Column(
-                  children: const [
+                  children: [
                     TextField(
-
+                      controller: _subjectController,
                       decoration: InputDecoration(
                         hintText: 'الاسم',
-                        hintStyle: TextStyle(fontSize: 20),
-
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Color(0xffF6A419), width: 3.0),
                         ),
@@ -132,11 +160,8 @@ class _ContactUsState extends State<ContactUs> {
                     ),
                     SizedBox(height: 5,),
                     TextField(
-
+                      controller: _recipientController,
                       decoration: InputDecoration(
-                        hintText: 'الايميل',
-                        hintStyle: TextStyle(fontSize: 20),
-
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Color(0xffF6A419), width: 3.0),
                         ),
@@ -146,11 +171,11 @@ class _ContactUsState extends State<ContactUs> {
                       ),
                     ),
                     SizedBox(height: 5,),
-
                     TextField(
                       keyboardType: TextInputType.multiline,
+                      controller: _bodyController,
 
-                      maxLines: 5,
+                      maxLines: 4,
 
                       decoration: InputDecoration(
                         hintText: 'رسالتكم',
@@ -164,19 +189,38 @@ class _ContactUsState extends State<ContactUs> {
                         ),
                       ),
                     ),
-
-
-
+                    // TextField(
+                    //   controller: _bodyController,
+                    //   maxLines: null,
+                    //   expands: true,
+                    //   textAlignVertical: TextAlignVertical.top,
+                    //   decoration: InputDecoration(
+                    //       labelText: 'Body', border: OutlineInputBorder()),
+                    // ),
+                    CheckboxListTile(
+                      contentPadding:
+                      EdgeInsets.symmetric(vertical: 0.0, horizontal: 8.0),
+                      title: Text('HTML'),
+                      onChanged: (bool? value) {
+                        if (value != null) {
+                          setState(() {
+                            isHTML = value;
+                          });
+                        }
+                      },
+                      value: isHTML,
+                    ),
                   ],
                 ),
+
               ),
             ),
-            SizedBox(height: 8,),
+
             InkWell(
-              onTap: () => _launchURL('xxx@gmail.com', 'Flutter Email Test', 'Hello Flutter'),
+              onTap: send,
               child: Container(
-                  height: 50,
-                  width: 150,
+                  height: 6.h,
+                  width: 45.w,
                   color: Color(0xffFDB640),
                   child: Center(
                       child: Directionality(
@@ -190,12 +234,14 @@ class _ContactUsState extends State<ContactUs> {
                         ),
                       ))),
             ),
+            SizedBox(height: 1.h,),
 
             Text(
               'أو تواصل معنا على',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
             ),
+            SizedBox(height: 1.h,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

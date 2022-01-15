@@ -2,6 +2,7 @@ import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:life_style_app/screens/drawers/m_l_drawer.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../../../drawers/m_g_drawer_side.dart';
 import '../male_loss_sport_calender.dart';
@@ -189,7 +190,7 @@ class _MaleLossDay5State extends State<MaleLossDay5> {
                   Positioned(
                       top: 0,
                       left: 100,
-                      child: Image.asset('assets/male_loss/m5.png',height: 220,)),
+                      child: Image.asset('assets/male_loss/m5.png',height: 25.h,)),
                 ],
               ),
             ),

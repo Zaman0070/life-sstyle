@@ -4,6 +4,7 @@ import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:life_style_app/screens/drawers/f_g_drawer.dart';
 
 import '../../drawers/m_g_drawer_side.dart';
+import 'package:sizer/sizer.dart';
 import '../f_sport.dart';
 
 class FExDay3 extends StatefulWidget {
@@ -188,7 +189,7 @@ class _FExDay3State extends State<FExDay3> {
                   Positioned(
                       top: 0,
                       left: 70,
-                      child: Image.asset('assets/fgain2.png',height: 240,)),
+                      child: Image.asset('assets/fgain2.png',height: 27.h,)),
                 ],
               ),
             ),

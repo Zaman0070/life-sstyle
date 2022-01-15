@@ -16,6 +16,7 @@ import 'package:life_style_app/screens/login_screen.dart';
 import 'package:life_style_app/screens/navigation_page.dart';
 import 'package:life_style_app/screens/splash_screen.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 
 import 'auth/email_screen.dart';
 import 'auth/email_verificatio_screen.dart';
@@ -41,11 +42,16 @@ class MyApp extends StatelessWidget {
         ),
       ],
 
-      child: MaterialApp(
-          theme:  ThemeData(scaffoldBackgroundColor: const Color(0xFFEFEFEF)),
-        title: 'Life Style App',
-        debugShowCheckedModeBanner: false,
-         home: NavigationPage(),
+      child: Sizer(
+          builder: (context, orientation, deviceType){
+            return MaterialApp(
+            theme:  ThemeData(scaffoldBackgroundColor: const Color(0xFFEFEFEF)),
+            title: 'Life Style App',
+            debugShowCheckedModeBanner: false,
+            home: NavigationPage(),
+            );
+          }
+
       ),
     );
   }

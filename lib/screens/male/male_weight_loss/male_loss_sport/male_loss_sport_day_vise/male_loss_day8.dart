@@ -5,6 +5,7 @@ import 'package:life_style_app/screens/drawers/m_l_drawer.dart';
 
 import '../../../../drawers/m_g_drawer_side.dart';
 import '../male_loss_sport_calender.dart';
+import 'package:sizer/sizer.dart';
 
 class MaleLossDay8 extends StatefulWidget {
   const MaleLossDay8({Key? key}) : super(key: key);
@@ -187,7 +188,7 @@ class _MaleLossDay8State extends State<MaleLossDay8> {
                   Positioned(
                       top: 0,
                       left: 90,
-                      child: Image.asset('assets/male_loss/m8.png',height: 240,)),
+                      child: Image.asset('assets/male_loss/m8.png',height: 27.h,)),
                 ],
               ),
             ),

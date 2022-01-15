@@ -8,6 +8,8 @@ import 'package:life_style_app/auth/google_screen.dart';
 import 'package:life_style_app/screens/home_screen.dart';
 import 'package:life_style_app/service/phone_service.dart';
 import 'dart:convert';
+import 'package:sizer/sizer.dart';
+
 
 
 String prettyPrint(Map json) {
@@ -113,7 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: double.infinity,
+        height: MediaQuery.of(context).size.height,
         width: double.infinity,
         decoration: BoxDecoration(
             image: DecorationImage(
@@ -124,17 +126,14 @@ class _LoginScreenState extends State<LoginScreen> {
         child:  Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 455,),
+            SizedBox(height: 445,),
             Container(
-              height: 345,
+              height: 44.h,
               width: double.infinity,
               //color: Colors.grey,
               child: Column(
                 children: [
                   SizedBox(height: 25,),
-
-
-
               // _checking
               //     ? Center(
               //   child: CircularProgressIndicator(),
@@ -207,7 +206,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
 
 
-                  SizedBox(height: 20,),
+                  SizedBox(height: 15,),
                   InkWell(
                     onTap: ()async {
                       User? user =await GoogleAuth.signInWithGoogle(context: context);
@@ -245,7 +244,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 40,),
+                  SizedBox(height: 2.h,),
                   InkWell(
                     onTap: (){
                       Navigator.push(context, MaterialPageRoute(builder: (_)=>EmailScreen()));
@@ -259,7 +258,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(height: 2.h,),
                   Text('نسيت كلمة السر    ؟',
                     style: TextStyle(
                         color: Colors.black,

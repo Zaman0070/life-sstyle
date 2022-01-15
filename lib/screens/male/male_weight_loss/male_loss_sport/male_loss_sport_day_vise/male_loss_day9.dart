@@ -5,6 +5,7 @@ import 'package:life_style_app/screens/drawers/m_l_drawer.dart';
 
 import '../../../../drawers/m_g_drawer_side.dart';
 import '../male_loss_sport_calender.dart';
+import 'package:sizer/sizer.dart';
 
 class MaleLossDay9 extends StatefulWidget {
   const MaleLossDay9({Key? key}) : super(key: key);
@@ -160,7 +161,7 @@ class _MaleLossDay9State extends State<MaleLossDay9> {
                         child: Center(
                             child: Column(
                               children: const [
-                                SizedBox(height: 80,),
+                                SizedBox(height: 75,),
                                 Text("Push-Up",
                                   style: TextStyle(
                                       fontSize: 22,
@@ -187,7 +188,7 @@ class _MaleLossDay9State extends State<MaleLossDay9> {
                   Positioned(
                       top: 0,
                       left: 100,
-                      child: Image.asset('assets/male_loss/m9.png',height: 220,)),
+                      child: Image.asset('assets/male_loss/m9.png',height: 26.h,)),
                 ],
               ),
             ),

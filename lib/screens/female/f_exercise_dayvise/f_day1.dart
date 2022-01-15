@@ -5,6 +5,7 @@ import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:life_style_app/screens/drawers/f_g_drawer.dart';
 import 'package:life_style_app/screens/drawers/m_g_drawer_side.dart';
 import 'package:life_style_app/screens/female/f_sport.dart';
+import 'package:sizer/sizer.dart';
 
 class FExDay1 extends StatefulWidget {
   const FExDay1({Key? key}) : super(key: key);
@@ -161,7 +162,7 @@ class _FExDay1State extends State<FExDay1> {
                                 child: Center(
                                     child: Column(
                                       children: const [
-                                        SizedBox(height: 100,),
+                                        SizedBox(height: 70,),
                                         Text("SQUAT",
                                         style: TextStyle(
                                           fontSize: 22,
@@ -188,7 +189,7 @@ class _FExDay1State extends State<FExDay1> {
                   Positioned(
                       top: 0,
                       left: 95,
-                      child: Image.asset('assets/fgain.png',height: 220,)),
+                      child: Image.asset('assets/fgain.png',height: 25.h,)),
                 ],
               ),
             ),
