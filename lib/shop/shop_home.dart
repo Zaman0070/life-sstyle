@@ -148,30 +148,36 @@ class _ShopHomeState extends State<ShopHome> {
                               productUrl: snapshot.data[index]["images"][0]["src"].toString(),
                               productName:snapshot.data[index]["name"].toString(),
                               productPrice: snapshot.data[index]["price"].toString(),
+                              discrition:  snapshot.data[index]["description"].toString(),
                               count: count,
                             )));
                           },
-                          child: ListTile(
-                            leading: Image.network(snapshot.data[index]["images"][0]["src"].toString(),height: 50,),
-                            title: Flexible(
-                              child: Text(snapshot.data[index]["name"].toString(),style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                overflow: TextOverflow.ellipsis
-                              ),),
-                            ),
-                            subtitle:
-                            Text("Buy now for \AED " + snapshot.data[index]["price"].toString()),
-                            trailing: InkWell(
-                              onTap: (){
-                                setState(() {
-                                  count ++;
-                                });
-                              },
-                              child: CircleAvatar(
-                                  backgroundColor:  Color(0xffFDB640),
-                                  child: Image.asset('assets/icons/shopping-cart.png',height: 20,)),
-                            ) ,
+                          child: Column(
+                            children: [
+                              ListTile(
+                                leading: Image.network(snapshot.data[index]["images"][0]["src"].toString(),height: 50,),
+                                title: Flexible(
+                                  child: Text(snapshot.data[index]["name"].toString(),style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                    overflow: TextOverflow.ellipsis
+                                  ),),
+                                ),
+                                subtitle:
+                                Text("Buy now for \AED " + snapshot.data[index]["price"].toString()),
+                                trailing: InkWell(
+                                  onTap: (){
+                                    setState(() {
+                                      count ++;
+                                    });
+                                  },
+                                  child: CircleAvatar(
+                                      backgroundColor:  Color(0xffFDB640),
+                                      child: Image.asset('assets/icons/shopping-cart.png',height: 20,)),
+                                ) ,
+                              ),
+
+                            ],
                           ),
                         );
                       },

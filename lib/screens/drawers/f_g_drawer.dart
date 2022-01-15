@@ -207,18 +207,6 @@ class _FemaleGainDrawerState extends State<FemaleGainDrawer> {
                           ),
                         ),
                         ListTile(
-                          onTap: () {},
-                          leading: Image.asset(
-                            'assets/icons/settings.png',
-                            height: 35,
-                            color: Colors.white,
-                          ),
-                          title: Text(
-                            "إعدادات حسابك",
-                            style: TextStyle(color: Colors.white, fontSize: 22),
-                          ),
-                        ),
-                        ListTile(
                           onTap: () {
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (_) => ShopHome()));

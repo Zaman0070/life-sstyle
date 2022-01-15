@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:life_style_app/shop/review_star.dart';
 import 'package:life_style_app/shop/shop_home.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'drawers/m_g_drawer_side.dart';
 import 'female/diet_plane.dart';
@@ -14,6 +15,15 @@ class ContactUs extends StatefulWidget {
 }
 
 class _ContactUsState extends State<ContactUs> {
+  _launchURL(String toMailId, String subject, String body) async {
+    var url = 'mailto:$toMailId?subject=$subject&body=$body';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -162,21 +172,24 @@ class _ContactUsState extends State<ContactUs> {
               ),
             ),
             SizedBox(height: 8,),
-            Container(
-                height: 50,
-                width: 150,
-                color: Color(0xffFDB640),
-                child: Center(
-                    child: Directionality(
-                      textDirection: TextDirection.rtl,
-                      child: Text(
-                        '>    إرسال   ',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 28,
-                            letterSpacing: 3),
-                      ),
-                    ))),
+            InkWell(
+              onTap: () => _launchURL('xxx@gmail.com', 'Flutter Email Test', 'Hello Flutter'),
+              child: Container(
+                  height: 50,
+                  width: 150,
+                  color: Color(0xffFDB640),
+                  child: Center(
+                      child: Directionality(
+                        textDirection: TextDirection.rtl,
+                        child: Text(
+                          '>    إرسال   ',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 28,
+                              letterSpacing: 3),
+                        ),
+                      ))),
+            ),
 
             Text(
               'أو تواصل معنا على',

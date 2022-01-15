@@ -16,6 +16,7 @@ class _LossWeightGeneralAdviceState extends State<LossWeightGeneralAdvice> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       backgroundColor: Colors.white,
       endDrawer: FemaleLossDrawer(),
       body: SafeArea(

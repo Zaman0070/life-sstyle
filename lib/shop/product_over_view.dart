@@ -1,5 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:life_style_app/screens/drawers/m_g_drawer_side.dart';
@@ -12,10 +10,11 @@ class ProductOverview extends StatefulWidget {
   final String? productName;
   final String? productUrl;
   final String? productPrice;
+  final String? discrition;
   final int? count;
 
 
-  ProductOverview({this.productName,this.productUrl,this.productPrice,this.count});
+  ProductOverview({this.productName,this.productUrl,this.productPrice,this.count, this.discrition});
 
 
 
@@ -84,7 +83,7 @@ class _ProductOverviewState extends State<ProductOverview> {
           ],
         ),
       ),
-      body: Column(
+      body: ListView(
         children: [
           Container(
               height:50,
@@ -139,19 +138,6 @@ class _ProductOverviewState extends State<ProductOverview> {
                         color: Colors.grey
                       ),
                     ),
-                    RichText(
-                      text: TextSpan(
-                        text: '250 DHS',
-                          style: TextStyle(fontWeight: FontWeight.bold,color:Color(0xffFDB640),fontSize: 22),
-
-                        children: const <TextSpan>[
-                          TextSpan(text: ' .', style: TextStyle(fontWeight: FontWeight.bold,color:Colors.grey,)),
-                          TextSpan(text: ' 1 KG',style: TextStyle(fontWeight: FontWeight.bold,color:Color(0xffFDB640),fontSize: 22),),
-                        ],
-                      ),
-                    ),
-
-
                     SizedBox(height: 10,),
                     Padding(
                       padding:  EdgeInsets.symmetric(horizontal: 20.0),
@@ -172,7 +158,7 @@ class _ProductOverviewState extends State<ProductOverview> {
                               ),
                             ],
                           ),
-                          Text('\AED ${widget.productPrice}',
+                          Text('\PSD ${widget.productPrice}',
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: 20,
@@ -184,13 +170,10 @@ class _ProductOverviewState extends State<ProductOverview> {
                     SizedBox(height: 10,),
                     Padding(
                       padding: const EdgeInsets.only(left: 30.0,right: 30),
-                      child: Directionality(
-                        textDirection: TextDirection.rtl,
-                        child: Text('مرحبا بكم على متجر نوتريانا الذي نقترح فيه عليكم مكملات غذائية طبيعية تساعد في زيادة قوة الجسم ، زيادة الكتلة العضلية و محاربة أعراض القولون العصبي'
-                          ,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
-                      ),
+                      child: Text(widget.discrition!.replaceAll("<", "").replaceAll(">", "").replaceAll("div class=", "").replaceAll("summary entry-summary", "").replaceAll('"', "").replaceAll("woocommerce-product-details__short-", "").replaceAll("description", "")
+                        .replaceAll("/", "").replaceAll("pstrongLIVRAISON PARTOUT AU MAROCstrongp", "").replaceAll("div", "").replaceAll(":", "").replaceAll("br", "").replaceAll("..p", "").replaceAll('.p', "").replaceAll("p*", ""),
+                        style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
                     ),
-                    SizedBox(height: 20,),
                     Container(
                         height:50,
                         width: 170,
