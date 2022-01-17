@@ -1,10 +1,15 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:life_style_app/screens/cat_screen/cary_screen.dart';
 import 'package:life_style_app/screens/drawers/m_g_drawer_side.dart';
 import 'package:life_style_app/shop/product_over_view.dart';
 import 'package:life_style_app/shop/review_star.dart';
 import 'package:woocommerce_api/woocommerce_api.dart';
+import 'package:woosignal/models/payload/order_wc.dart';
+import 'package:woosignal/models/response/products.dart';
+import 'package:woosignal/woosignal.dart';
+import 'package:http/http.dart' as http;
 
 
 class ShopHome extends StatefulWidget {
@@ -16,6 +21,25 @@ class ShopHome extends StatefulWidget {
 class _ShopHomeState extends State<ShopHome> {
   int count = 0;
 
+  getProducts() async {
+
+
+    await WooSignal.instance.init(appKey: "ck_73b8b2030da9878cdc1b9cdab513fce415418696");
+
+    OrderWC orderWC = OrderWC();
+    orderWC.setPaid = true;
+    orderWC.lineItems = [];
+
+    // Step 2 - Call an API
+    WooSignal.instance.createOrder(orderWC);// prints a product name
+
+  }
+
+
+
+
+
+
   Future _getProducts() async {
     // Initialize the API
     WooCommerceAPI wooCommerceAPI = WooCommerceAPI(
@@ -25,9 +49,23 @@ class _ShopHomeState extends State<ShopHome> {
 
     // Get data using the "products" endpoint
     var products = await wooCommerceAPI.getAsync("products");
-
     return products;
   }
+
+  addToCart(int id)async{
+    var basrUrl = "https://nutriana.surnaturel.ma/";
+    var client =http.Client();
+    Map<String,String> header ={'content-type' : 'application/json'};
+    var response = await client.post(Uri.parse(basrUrl + "?add-to-cart=$id"),headers: header
+    );
+    if(response.statusCode == 200){
+      print('cart added');
+    }else{
+      print('cart not order');
+    }
+  }
+
+
 
 
   @override
@@ -71,10 +109,6 @@ class _ShopHomeState extends State<ShopHome> {
                   child: Image.asset('assets/icons/shopping-cart.png',height: 20,)),
             SizedBox(width: 5,),
             Text('$count+',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black,fontSize: 16),),
-
-
-
-
 
           ],
         ),
@@ -158,7 +192,8 @@ class _ShopHomeState extends State<ShopHome> {
                                 leading: Image.network(snapshot.data[index]["images"][0]["src"].toString(),height: 50,),
                                 title: Flexible(
                                   child: Text(snapshot.data[index]["name"].toString(),style: TextStyle(
-                                    fontSize: 15,
+                                    fontSize: 16,
+                                      color:Color(0xffFDB640),
                                     fontWeight: FontWeight.bold,
                                     overflow: TextOverflow.ellipsis
                                   ),),
@@ -166,9 +201,13 @@ class _ShopHomeState extends State<ShopHome> {
                                 subtitle:
                                 Text("Buy now for \AED " + snapshot.data[index]["price"].toString()),
                                 trailing: InkWell(
+
                                   onTap: (){
+                                   getProducts();
                                     setState(() {
+                                      var id= snapshot.data[index]['id'];
                                       count ++;
+                                      addToCart(id);
                                     });
                                   },
                                   child: CircleAvatar(

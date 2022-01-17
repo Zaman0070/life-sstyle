@@ -55,11 +55,14 @@ dependencies:
   add_to_cart_animation: ^1.0.1
   favorite_button: ^0.0.4
   share: ^2.0.4
-  woosignal: ^3.0.3
   http: ^0.13.4
   html: ^0.15.0
   flutter_email_sender: ^5.0.2
   sizer: ^2.0.15
+  crypto: ^3.0.1
+  flutter_secure_storage: ^5.0.2
+  woosignal: ^3.0.3
+
 
 
 
