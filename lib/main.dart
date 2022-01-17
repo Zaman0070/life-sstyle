@@ -15,7 +15,10 @@ import 'package:life_style_app/screens/home_screen.dart';
 import 'package:life_style_app/screens/login_screen.dart';
 import 'package:life_style_app/screens/navigation_page.dart';
 import 'package:life_style_app/screens/splash_screen.dart';
+<<<<<<< HEAD
 import 'package:life_style_app/shop/shop_home.dart';
+=======
+>>>>>>> 8ccb3b365e9d7cab59afe912df64d75231ab0ddc
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
@@ -30,6 +33,10 @@ void main() async {
   runApp(MyApp());
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8ccb3b365e9d7cab59afe912df64d75231ab0ddc
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -38,6 +45,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<ProductProvider>(
+<<<<<<< HEAD
           create: (context) => ProductProvider(),
         ),
       ],
@@ -53,3 +61,25 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+=======
+          create: (context)=>ProductProvider(),
+        ),
+      ],
+
+      child: Sizer(
+          builder: (context, orientation, deviceType){
+            return MaterialApp(
+            theme:  ThemeData(scaffoldBackgroundColor: const Color(0xFFEFEFEF)),
+            title: 'Life Style App',
+            debugShowCheckedModeBanner: false,
+            home: NavigationPage(),
+            );
+          }
+
+      ),
+    );
+  }
+}
+
+
+>>>>>>> 8ccb3b365e9d7cab59afe912df64d75231ab0ddc

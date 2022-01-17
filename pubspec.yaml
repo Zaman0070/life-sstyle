@@ -62,7 +62,10 @@ dependencies:
   crypto: ^3.0.1
   flutter_secure_storage: ^5.0.2
   woosignal: ^3.0.3
+<<<<<<< HEAD
   uuid: ^3.0.5
+=======
+>>>>>>> 8ccb3b365e9d7cab59afe912df64d75231ab0ddc
 
 
 
